@@ -2425,7 +2425,7 @@ blockquote footer cite:before {
   margin-bottom: 1rem;
 }
 #nav.full_page {
-  height: 100vh;
+  height: 400px;
 }
 #nav .nav_bg {
   width: 100%;
@@ -2459,7 +2459,7 @@ blockquote footer cite:before {
 #site-info {
   position: absolute;
   width: 100%;
-  top: 43%;
+  top: 40%;
 }
 #site-title,
 #site-sub-title {
