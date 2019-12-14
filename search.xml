@@ -7,31 +7,31 @@
 
 <h2 id="2-下载Android-Stuio安装包"><a href="#2-下载Android-Stuio安装包" class="headerlink" title="2.下载Android Stuio安装包"></a>2.下载Android Stuio安装包</h2><img class="lazyload" title="安装AndroidStudio" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AE%89%E8%A3%85AndroidStudio.png">
 
-<h2 id="3-下载完成运行Android-Studio安装程序安装"><a href="#3-下载完成运行Android-Studio安装程序安装" class="headerlink" title="3.下载完成运行Android Studio安装程序安装"></a>3.下载完成运行Android Studio安装程序安装</h2><ol>
+<h2 id="3-下载完成运行Android-Studio安装程序安装"><a href="#3-下载完成运行Android-Studio安装程序安装" class="headerlink" title="3.下载完成运行Android Studio安装程序安装"></a>3.下载完成运行Android Studio安装程序安装</h2><ul>
 <li>选择下一步开始安装</li>
-</ol>
+</ul>
 <p>​       <img class="lazyload" title="打开AS安装程序" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E6%89%93%E5%BC%80AS%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.png"></p>
-<ol start="2">
+<ul>
 <li>选择是否安装安卓模拟器</li>
-</ol>
+</ul>
 <p>​       <img class="lazyload" title="是否安装安卓模拟器" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8.png"></p>
-<ol start="3">
+<ul>
 <li>选择Android Studio安装路径</li>
-</ol>
+</ul>
 <p>​      <img class="lazyload" title="AS安装路径" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/AS%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84.png"> </p>
-<ol start="4">
+<ul>
 <li>选择快捷方式菜单栏的文件夹目录</li>
-</ol>
+</ul>
 <p>​      <img class="lazyload" title="快捷方式目录" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E7%9B%AE%E5%BD%95.png"></p>
-<ol start="5">
+<ul>
 <li><p>安装完成,点击下一步</p>
-<img class="lazyload" title="安装完成" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png"> 
+ <img class="lazyload" title="安装完成" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png"> 
 </li>
 <li><p>启动Android Studio</p>
- 
+  
 
 </li>
-</ol>
+</ul>
 <h2 id="4-选择是否导入Android-Studio-设置"><a href="#4-选择是否导入Android-Studio-设置" class="headerlink" title="4.选择是否导入Android Studio 设置"></a>4.选择是否导入Android Studio 设置</h2>   <img class="lazyload" title="导入设置" data-src="/public/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AF%BC%E5%85%A5%E8%AE%BE%E7%BD%AE.png"> 
 
 <h2 id="5-设置代理"><a href="#5-设置代理" class="headerlink" title="5.设置代理"></a>5.设置代理</h2><p> 选择取消,我这里试过设置代理会出现一些问题,<strong>建议取消</strong></p>
