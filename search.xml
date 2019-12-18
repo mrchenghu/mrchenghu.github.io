@@ -1,58 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android Studio安装教程(Windows版)</title>
-    <url>/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-访问-Android-Studio-中文社区"><a href="#1-访问-Android-Studio-中文社区" class="headerlink" title="1.访问 Android Studio 中文社区"></a>1.访问 <a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a></h2><img class="lazyload" title="AS中文论坛" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/AS%E4%B8%AD%E6%96%87%E8%AE%BA%E5%9D%9B.png">
+    <title>如何在Windows上配置安卓SDK</title>
+    <url>/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果你已经安装了Android Studio,Android Studio会带有SDK环境,如果没有可以通过下载ADT配置安卓SDK</p>
+<h2 id="访问-Android-Studio-中文社区"><a href="#访问-Android-Studio-中文社区" class="headerlink" title="访问 Android Studio 中文社区"></a>访问 <a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a></h2> 
 
-<h2 id="2-下载Android-Stuio安装包"><a href="#2-下载Android-Stuio安装包" class="headerlink" title="2.下载Android Stuio安装包"></a>2.下载Android Stuio安装包</h2><img class="lazyload" title="安装AndroidStudio" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AE%89%E8%A3%85AndroidStudio.png">
+<h2 id="下载ADT"><a href="#下载ADT" class="headerlink" title="下载ADT"></a>下载ADT</h2><p>ADT Bundle包含了Eclipse、ADT插件和SDK Tools，是已经集成好的IDE，只需安装好Jdk即可开始开发，推荐初学者下载ADT Bundle，不用再折腾开发环境。</p>
+<ul>
+<li><p>在主页找到下载-&gt;ADT,</p>
+<img class="lazyload" title="ADT下载1" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/ADT%E4%B8%8B%E8%BD%BD1.png">
+</li>
+<li><p>根据运行平台选择下载版本,我这里下载的windows64位</p>
+ <img class="lazyload" title="ADT下载2" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/ADT%E4%B8%8B%E8%BD%BD2.png">
+</li>
+<li><p>ADT下载完后是zip压缩包的格式.解压完即可使用,我的存放路径为C:\Environment\adt-bundle-windows-x86_64-20140702</p>
+ 
 
-<h2 id="3-下载完成运行Android-Studio安装程序安装"><a href="#3-下载完成运行Android-Studio安装程序安装" class="headerlink" title="3.下载完成运行Android Studio安装程序安装"></a>3.下载完成运行Android Studio安装程序安装</h2><ul>
+
+</li>
+</ul>
+<h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><ul>
+<li><p>打开SDK Manager.exe一闪而过无法正常打开,请检查是否正确安装了JDK并配置了Java变量</p>
+</li>
+<li><p>打开后sdk列表无法正常加载,常见错误为dl-ssl.google.com无法连接,可尝试设置代理(以<a href="http://mirrors.neusoft.edu.cn/" target="_blank" rel="noopener">东软信息学院镜像网站</a>为例),勾选强制https</p>
+  <img class="lazyload" title="解决1" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/%E8%A7%A3%E5%86%B31.png">
+</li>
+<li><p>一直显示Done loading packages,无法刷新出SDK列表</p>
+   <img class="lazyload" title="错误2." data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/%E9%94%99%E8%AF%AF2.png">
+
+<p>   解决办法:</p>
+<ol>
+<li><p>删除代理,取消https</p>
+  <img class="lazyload" title="取消代理设置" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE.png">
+</li>
+<li><p>手动配置hosts,打开<a href="http://tool.chinaz.com/" target="_blank" rel="noopener">站长工具</a>检,在搜索栏填入 dl-ssl.google.com 选择网站测速-&gt;Ping检测</p>
+ <img class="lazyload" title="Ping检测1" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/Ping%E6%A3%80%E6%B5%8B1.png">
+</li>
+<li><p>查找出ping最小的ip</p>
+ <img class="lazyload" title="Ping检测2" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/Ping%E6%A3%80%E6%B5%8B2.png">
+</li>
+<li><p>打开C:\Windows\System32\drivers\etc\hosts 文件</p>
+ <img class="lazyload" title="hosts" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/hosts.png">
+</li>
+<li><p>在最下面添加你获取到的ip + ssl.google.com</p>
+ <img class="lazyload" title="解决2" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/%E8%A7%A3%E5%86%B32.png">
+</li>
+<li><p>关闭SDK Manager.exe重新启动,就可以正常获取到SDK了!</p>
+</li>
+</ol>
+<p>​        <img class="lazyload" title="SDK列表" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%AE%89%E5%8D%93SDK/SDK%E5%88%97%E8%A1%A8.png"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Unity打包从入门到精通</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何在Windwos上配置JDK</title>
+    <url>/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最新版本的Unity已经内置了JDK,不需要再从新安装了,可以在Unity中通过Edit-&gt;Preferences-&gt;External Tools查看</p>
+<img class="lazyload" title="下载jdk" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/Preferences.png">
+
+<h2 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h2><p>通过访<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">甲骨文官网</a>,选择JavaSE-&gt;Downloads-&gt;JDK下载</p>
+<img class="lazyload" title="下载jdk" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/%E4%B8%8B%E8%BD%BDjdk.png">
+
+<h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><p>选择下载好的jdk安装包开始安装,我习惯将环境安装到C:\Environment下</p>
+<ol>
+<li><p>选择你想安装的jdk的目录</p>
+<img class="lazyload" title="安装jdk" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/%E5%AE%89%E8%A3%85jdk.png">
+</li>
+<li><p>选择你想要的jre的目录</p>
+<img class="lazyload" title="安装jre" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/%E5%AE%89%E8%A3%85jre.png">
+
+</li>
+</ol>
+<h2 id="配置Java环境变量"><a href="#配置Java环境变量" class="headerlink" title="配置Java环境变量"></a>配置Java环境变量</h2><ol>
+<li><p>在桌面右键我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;系统变量</p>
+</li>
+<li><p>新建JAVA_HOME,选择你的jdk安装目录. 示例: C:\Environment\jdk</p>
+</li>
+<li><p>新建CLASSPATH,填入.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
+</li>
+<li><p>在Path中新建一行填入你的jdk安装目录的bin目录. 示例: C:\Environment\jdk\bin</p>
+</li>
+<li><p>按Win+R快捷键打开运行.输入cmd打开控制台</p>
+</li>
+<li><p>输入java回车,显示jdk信息说明配置正确</p>
+ <img class="lazyload" title="java" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/java.png">
+</li>
+<li><p>输入javac回车,显示jdk信息说明配置正确</p>
+<img class="lazyload" title="javac" data-src="/2019/12/17/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E9%85%8D%E7%BD%AEJDK/javac.png">
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Unity打包从入门到精通</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何在Windwos上安装Android Studio</title>
+    <url>/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="访问-Android-Studio-中文社区"><a href="#访问-Android-Studio-中文社区" class="headerlink" title="访问 Android Studio 中文社区"></a>访问 <a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a></h2><img class="lazyload" title="AS中文论坛" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/AS%E4%B8%AD%E6%96%87%E8%AE%BA%E5%9D%9B.png">
+
+<h2 id="下载Android-Stuio安装包"><a href="#下载Android-Stuio安装包" class="headerlink" title="下载Android Stuio安装包"></a>下载Android Stuio安装包</h2><img class="lazyload" title="安装AndroidStudio" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%AE%89%E8%A3%85AndroidStudio.png">
+
+<h2 id="下载完成运行Android-Studio安装程序安装"><a href="#下载完成运行Android-Studio安装程序安装" class="headerlink" title="下载完成运行Android Studio安装程序安装"></a>下载完成运行Android Studio安装程序安装</h2><ul>
 <li>选择下一步开始安装</li>
 </ul>
-<p>​       <img class="lazyload" title="打开AS安装程序" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E6%89%93%E5%BC%80AS%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.png"></p>
+<p>​       <img class="lazyload" title="打开AS安装程序" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E6%89%93%E5%BC%80AS%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F.png"></p>
 <ul>
 <li>选择是否安装安卓模拟器</li>
 </ul>
-<p>​       <img class="lazyload" title="是否安装安卓模拟器" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8.png"></p>
+<p>​       <img class="lazyload" title="是否安装安卓模拟器" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8.png"></p>
 <ul>
 <li>选择Android Studio安装路径</li>
 </ul>
-<p>​      <img class="lazyload" title="AS安装路径" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/AS%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84.png"> </p>
+<p>​      <img class="lazyload" title="AS安装路径" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/AS%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84.png"> </p>
 <ul>
 <li>选择快捷方式菜单栏的文件夹目录</li>
 </ul>
-<p>​      <img class="lazyload" title="快捷方式目录" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E7%9B%AE%E5%BD%95.png"></p>
+<p>​      <img class="lazyload" title="快捷方式目录" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E7%9B%AE%E5%BD%95.png"></p>
 <ul>
 <li><p>安装完成,点击下一步</p>
- <img class="lazyload" title="安装完成" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png"> 
+ <img class="lazyload" title="安装完成" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png"> 
 </li>
 <li><p>启动Android Studio</p>
   
 
 </li>
 </ul>
-<h2 id="4-选择是否导入Android-Studio-设置"><a href="#4-选择是否导入Android-Studio-设置" class="headerlink" title="4.选择是否导入Android Studio 设置"></a>4.选择是否导入Android Studio 设置</h2>   <img class="lazyload" title="导入设置" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%AF%BC%E5%85%A5%E8%AE%BE%E7%BD%AE.png"> 
+<h2 id="选择是否导入Android-Studio-设置"><a href="#选择是否导入Android-Studio-设置" class="headerlink" title="选择是否导入Android Studio 设置"></a>选择是否导入Android Studio 设置</h2>   <img class="lazyload" title="导入设置" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%AF%BC%E5%85%A5%E8%AE%BE%E7%BD%AE.png"> 
 
-<h2 id="5-设置代理"><a href="#5-设置代理" class="headerlink" title="5.设置代理"></a>5.设置代理</h2><p> 选择取消,我这里试过设置代理会出现一些问题,<strong>建议取消</strong></p>
-   <img class="lazyload" title="取消设置代理" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%8F%96%E6%B6%88%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.png"> 
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><p> 选择取消,我这里试过设置代理会出现一些问题,<strong>建议取消</strong></p>
+   <img class="lazyload" title="取消设置代理" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%8F%96%E6%B6%88%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.png"> 
 
-<h2 id="6-通过安装向导继续安装"><a href="#6-通过安装向导继续安装" class="headerlink" title="6.通过安装向导继续安装"></a>6.通过安装向导继续安装</h2>   <img class="lazyload" title="向导" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%90%91%E5%AF%BC.png"> 
+<h2 id="通过安装向导继续安装"><a href="#通过安装向导继续安装" class="headerlink" title="通过安装向导继续安装"></a>通过安装向导继续安装</h2>   <img class="lazyload" title="向导" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%90%91%E5%AF%BC.png"> 
 
-<h2 id="7-选择需要安装的资源"><a href="#7-选择需要安装的资源" class="headerlink" title="7.选择需要安装的资源"></a>7.选择需要安装的资源</h2><p>   一般选择标准资源就够了</p>
-   <img class="lazyload" title="选择安装资源" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E9%80%89%E6%8B%A9%E5%AE%89%E8%A3%85%E8%B5%84%E6%BA%90.png"> 
+<h2 id="选择需要安装的资源"><a href="#选择需要安装的资源" class="headerlink" title="选择需要安装的资源"></a>选择需要安装的资源</h2><p>   一般选择标准资源就够了</p>
+   <img class="lazyload" title="选择安装资源" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E9%80%89%E6%8B%A9%E5%AE%89%E8%A3%85%E8%B5%84%E6%BA%90.png"> 
 
-<h2 id="8-选择主题"><a href="#8-选择主题" class="headerlink" title="8.选择主题"></a>8.选择主题</h2>   <img class="lazyload" title="选择主题" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E9%80%89%E6%8B%A9%E4%B8%BB%E9%A2%98.png"> 
+<h2 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h2>   <img class="lazyload" title="选择主题" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E9%80%89%E6%8B%A9%E4%B8%BB%E9%A2%98.png"> 
 
-<h2 id="9-确认设置"><a href="#9-确认设置" class="headerlink" title="9.确认设置"></a>9.确认设置</h2><p>   确认无误后点击下一步,等待下载完成,选择结束</p>
-   <img class="lazyload" title="确认设置" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E7%A1%AE%E8%AE%A4%E8%AE%BE%E7%BD%AE.png"> 
+<h2 id="确认设置"><a href="#确认设置" class="headerlink" title="确认设置"></a>确认设置</h2><p>   确认无误后点击下一步,等待下载完成,选择结束</p>
+   <img class="lazyload" title="确认设置" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E7%A1%AE%E8%AE%A4%E8%AE%BE%E7%BD%AE.png"> 
 
-<h2 id="10-管理SDK"><a href="#10-管理SDK" class="headerlink" title="10.管理SDK"></a>10.管理SDK</h2><ol>
+<h2 id="管理SDK"><a href="#管理SDK" class="headerlink" title="管理SDK"></a>管理SDK</h2><ol>
 <li><p>启动Android Studio</p>
-<img class="lazyload" title="启动" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%90%AF%E5%8A%A8.png"> 
+<img class="lazyload" title="启动" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/%E5%90%AF%E5%8A%A8.png"> 
 </li>
 <li><p>选择Configure-&gt;SDK Manager </p>
-<img class="lazyload" title="SDKManager" data-src="/2019/12/09/Android%20Studio%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/SDKManager.png"> 
+<img class="lazyload" title="SDKManager" data-src="/2019/12/09/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Android%20Studio/SDKManager.png"> 
 
 
 
@@ -71,52 +170,48 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Windows</category>
+        <category>Unity打包从入门到精通</category>
       </categories>
-      <tags>
-        <tag>Android Studio</tag>
-      </tags>
   </entry>
   <entry>
-    <title>Unity安装教程(Windows版)</title>
-    <url>/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<h2 id="1-打开Unity国内官网"><a href="#1-打开Unity国内官网" class="headerlink" title="1.打开Unity国内官网"></a>1.打开<a href="https://unity.cn/" target="_blank" rel="noopener">Unity</a>国内官网</h2><img class="lazyload" title="Unity官网" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/Unity%E5%AE%98%E7%BD%91.png">
+    <title>如何在Windwos上安装Unity</title>
+    <url>/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="访问Unity国内官网"><a href="#访问Unity国内官网" class="headerlink" title="访问Unity国内官网"></a>访问<a href="https://unity.cn/" target="_blank" rel="noopener">Unity</a>国内官网</h2><img class="lazyload" title="Unity官网" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/Unity%E5%AE%98%E7%BD%91.png">
 
 <hr>
-<h2 id="2-选择需要下载的版本"><a href="#2-选择需要下载的版本" class="headerlink" title="2.选择需要下载的版本"></a>2.选择需要下载的版本</h2><p>等待官网打开后向下拉,在最下面选择需要下载的版本,<strong>一般选择LTS(稳定)版本</strong></p>
-<img class="lazyload" title="选择版本" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E9%80%89%E6%8B%A9%E7%89%88%E6%9C%AC.png">
+<h2 id="选择需要下载的版本"><a href="#选择需要下载的版本" class="headerlink" title="选择需要下载的版本"></a>选择需要下载的版本</h2><p>等待官网打开后向下拉,在最下面选择需要下载的版本,<strong>一般选择LTS(稳定)版本</strong></p>
+<img class="lazyload" title="选择版本" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E9%80%89%E6%8B%A9%E7%89%88%E6%9C%AC.png">
 
 <hr>
-<h2 id="3-下载Unity安装器"><a href="#3-下载Unity安装器" class="headerlink" title="3.下载Unity安装器"></a>3.下载Unity安装器</h2><p>这里以最新稳定版Unity 2018.4.13f1为例,下载完成后直接<strong>运行.exe安装器</strong>,<strong>点击下一步和同意</strong></p>
-<img class="lazyload" title="选择版本" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%99%A8.png">
+<h2 id="下载Unity安装器"><a href="#下载Unity安装器" class="headerlink" title="下载Unity安装器"></a>下载Unity安装器</h2><p>这里以最新稳定版Unity 2018.4.13f1为例,下载完成后直接<strong>运行.exe安装器</strong>,<strong>点击下一步和同意</strong></p>
+<img class="lazyload" title="选择版本" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%99%A8.png">
 
 <hr>
-<h2 id="4-选择安装内容"><a href="#4-选择安装内容" class="headerlink" title="4.选择安装内容"></a>4.选择安装内容</h2><p>现选中部分依次为(<strong>Unity编辑器,安卓打包环境,Win打包环境</strong>),如果已经安装或者不需要可以不勾选(我已经安装了vs2019并且是windows平台,所以没有勾选vs2017和苹果打包环境),勾选好后点击下一步</p>
-<img class="lazyload" title="选择安装内容" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E9%80%89%E6%8B%A9%E5%AE%89%E8%A3%85%E5%86%85%E5%AE%B9.png">
+<h2 id="选择安装内容"><a href="#选择安装内容" class="headerlink" title="选择安装内容"></a>选择安装内容</h2><p>现选中部分依次为(<strong>Unity编辑器,安卓打包环境,Win打包环境</strong>),如果已经安装或者不需要可以不勾选(我已经安装了vs2019并且是windows平台,所以没有勾选vs2017和苹果打包环境),勾选好后点击下一步</p>
+<img class="lazyload" title="选择安装内容" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E9%80%89%E6%8B%A9%E5%AE%89%E8%A3%85%E5%86%85%E5%AE%B9.png">
 
 <hr>
-<h2 id="5-选择安装路径安装"><a href="#5-选择安装路径安装" class="headerlink" title="5.选择安装路径安装"></a>5.选择安装路径安装</h2><p>我习惯在我的C盘(固态盘)创建一个文件夹Application作为我的应用安装目录,选择后点击下一步开始安装.</p>
-<img class="lazyload" title="选择安装路径" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E9%80%89%E6%8B%A9%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84.png">
+<h2 id="选择安装路径安装"><a href="#选择安装路径安装" class="headerlink" title="选择安装路径安装"></a>选择安装路径安装</h2><p>我习惯在我的C盘(固态盘)创建一个文件夹Application作为我的应用安装目录,选择后点击下一步开始安装.</p>
+<img class="lazyload" title="选择安装路径" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E9%80%89%E6%8B%A9%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84.png">
 
 <hr>
-<h2 id="6-启动Unity"><a href="#6-启动Unity" class="headerlink" title="6.启动Unity"></a>6.启动Unity</h2><p>通过桌面快捷方式或者安装路径的Unity.exe启动Unity</p>
+<h2 id="启动Unity"><a href="#启动Unity" class="headerlink" title="启动Unity"></a>启动Unity</h2><p>通过桌面快捷方式或者安装路径的Unity.exe启动Unity</p>
 <hr>
-<h2 id="7-登录Unity账号"><a href="#7-登录Unity账号" class="headerlink" title="7.登录Unity账号"></a>7.登录Unity账号</h2><ol>
+<h2 id="登录Unity账号"><a href="#登录Unity账号" class="headerlink" title="登录Unity账号"></a>登录Unity账号</h2><ol>
 <li><p>通过App Connect(Unity官方App)扫码登录</p>
-<img class="lazyload" title="Connect登录" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/Connect%E7%99%BB%E5%BD%95.png">
+<img class="lazyload" title="Connect登录" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/Connect%E7%99%BB%E5%BD%95.png">
 </li>
 <li><p>通过Unity ID或者微信扫码登录</p>
-<img class="lazyload" title="账号或微信登录" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E8%B4%A6%E5%8F%B7%E6%88%96%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95.png">
+<img class="lazyload" title="账号或微信登录" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E8%B4%A6%E5%8F%B7%E6%88%96%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95.png">
 
 </li>
 </ol>
 <hr>
-<h2 id="8-选择许可证"><a href="#8-选择许可证" class="headerlink" title="8.选择许可证"></a>8.选择许可证</h2><p>如果购买了加强版或专业版可以选择Plus or Pro,这里我选择的Personal(个人版)</p>
-<img class="lazyload" title="选择许可证" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E9%80%89%E6%8B%A9%E8%AE%B8%E5%8F%AF%E8%AF%81.png">
+<h2 id="选择许可证"><a href="#选择许可证" class="headerlink" title="选择许可证"></a>选择许可证</h2><p>如果购买了加强版或专业版可以选择Plus or Pro,这里我选择的Personal(个人版)</p>
+<img class="lazyload" title="选择许可证" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E9%80%89%E6%8B%A9%E8%AE%B8%E5%8F%AF%E8%AF%81.png">
 
 <hr>
-<h2 id="9-根据用途和收入选择协议"><a href="#9-根据用途和收入选择协议" class="headerlink" title="9.根据用途和收入选择协议"></a>9.根据用途和收入选择协议</h2><p>以下是翻译后(百度翻译)的协议内容</p>
+<h2 id="根据用途和收入选择协议"><a href="#根据用途和收入选择协议" class="headerlink" title="根据用途和收入选择协议"></a>根据用途和收入选择协议</h2><p>以下是翻译后(百度翻译)的协议内容</p>
 <ol>
 <li><p>公司或组织上一年财政总收入超过10w美元</p>
 </li>
@@ -125,10 +220,10 @@
 <li><p>不以专业(或职业)人员的身份使用Unity</p>
 </li>
 </ol>
-<img class="lazyload" title="协议" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E5%8D%8F%E8%AE%AE.png">
+<img class="lazyload" title="协议" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E5%8D%8F%E8%AE%AE.png">
 
 <p>选择好后点击下一步即可成功启动</p>
-<img class="lazyload" title="成功启动" data-src="/2019/12/07/Unity%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(Windows%E7%89%88)/%E6%88%90%E5%8A%9F%E5%90%AF%E5%8A%A8.png">
+<img class="lazyload" title="成功启动" data-src="/2019/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8Windwos%E4%B8%8A%E5%AE%89%E8%A3%85Unity/%E6%88%90%E5%8A%9F%E5%90%AF%E5%8A%A8.png">
 
 
 
@@ -142,10 +237,7 @@
 
 ]]></content>
       <categories>
-        <category>Windows</category>
+        <category>Unity打包从入门到精通</category>
       </categories>
-      <tags>
-        <tag>Unity</tag>
-      </tags>
   </entry>
 </search>
