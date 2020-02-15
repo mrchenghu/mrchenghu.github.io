@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Windows10许可证即将到期</title>
-    <url>/2020/02/14/Windows10%E8%AE%B8%E5%8F%AF%E8%AF%81%E5%8D%B3%E5%B0%86%E5%88%B0%E6%9C%9F/</url>
+    <title>pattern not found</title>
+    <url>/2020/02/15/pattern-not-found/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>谈起Unity破解相关的问题，如果你是一名Unity开发者，那么肯定就不会陌生。<br>因为Unity虽然提供了个人版，但是个人版打包后会带有的水印，无法在产品上线时使用。<br>所以无论是为了节约成本还是为了方便使用，中小企业或独立开发者往往还是会选择破解。<br>如果你以前破解过或者安装了多个版本的Unity，在再次破解时就有可能会提示“pattern not found”破解失败。</p>
+<h2 id="方案一-重新安装"><a href="#方案一-重新安装" class="headerlink" title="方案一 重新安装"></a>方案一 重新安装</h2><p>删除C:\ProgramData\Unity目录，重新安装Unity。安装完成后不要运行直接破解。</p>
+<h2 id="方案二-重新加载许可证"><a href="#方案二-重新加载许可证" class="headerlink" title="方案二 重新加载许可证"></a>方案二 重新加载许可证</h2><p>检查破解后是否在C:\ProgramData\Unity目录(ProgramData为隐藏文件夹)下生成Unity_lic.ulf，<br>尝试启动Unity，使用账号登录，随便打开一个工程，点击菜单栏Help/Manage License 选择Manual Activation/Load License。</p>
+<h2 id="方案三-下载国外版Unity"><a href="#方案三-下载国外版Unity" class="headerlink" title="方案三 下载国外版Unity"></a>方案三 下载国外版Unity</h2><p>登录Unity国外官网，可能需要翻墙，下载安装你需要的Unity版本，安装完成后尝试破解。</p>
+<h2 id="方案四-直接拷贝相关文件"><a href="#方案四-直接拷贝相关文件" class="headerlink" title="方案四 直接拷贝相关文件"></a>方案四 直接拷贝相关文件</h2><p>如果你像我一样，试过上面所办法，可能他们曾经管用过，但是后面不管用了，可以尝试直接拷贝破解相关的文件完成破解。<br>首先需要有一台电脑可以成功破解Unity，有同事可以找同事借，没有同事可以用其他电脑，没有其他电脑可以安装虚拟机 等。<br>拷贝这台电脑上的C:\ProgramData\Unity文件夹和Unity安装目录的Unity.exe文件到你的电脑上替换到相关目录的文件即可。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>你的Windows10许可证即将到期</title>
+    <url>/2020/02/14/%E4%BD%A0%E7%9A%84Windows10%E8%AE%B8%E5%8F%AF%E8%AF%81%E5%8D%B3%E5%B0%86%E5%88%B0%E6%9C%9F/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近电脑系统升级，升级后每次开机都会弹出“你的Windows10许可证即将过期”。<br>如果你跟我一样不是购买微软官网激活码激活的话，肯定也会经常遇到这个问题。<br>这个时候我们需要重新激活我们的W10系统，这里我推荐一个激活工具KMSpico。</p>
 ]]></content>
   </entry>
