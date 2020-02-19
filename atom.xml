@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrchenghu.github.io/"/>
-  <updated>2020-02-19T11:51:51.687Z</updated>
+  <updated>2020-02-19T15:00:52.432Z</updated>
   <id>https://mrchenghu.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unity导出为XCode工程后无法选择iPhone模拟器运行</title>
+    <link href="https://mrchenghu.github.io/2020/02/19/Unity%E5%AF%BC%E5%87%BA%E4%B8%BAXCode%E5%B7%A5%E7%A8%8B%E5%90%8E%E6%97%A0%E6%B3%95%E9%80%89%E6%8B%A9%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C/"/>
+    <id>https://mrchenghu.github.io/2020/02/19/Unity%E5%AF%BC%E5%87%BA%E4%B8%BAXCode%E5%B7%A5%E7%A8%8B%E5%90%8E%E6%97%A0%E6%B3%95%E9%80%89%E6%8B%A9%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C/</id>
+    <published>2020-02-19T13:50:15.000Z</published>
+    <updated>2020-02-19T15:00:52.432Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在手边正好没有苹果测试机，或者想要调试某个机型、系统的时候，身边又没有的时候后，就轮到模拟器出场了！</p><p>但是当我们正常导出Unity项目为XCode工程时，设备上明明安装了iPhone模拟器，却并发现没有模拟器运行选项。</p><p>后来发现需要将Unity项目导出时设置PlayerSettings Settings for iOS中的Target SDK 为Simulator SDK才可以使用。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Android SDKManager 无法连接到dl.google.com</title>

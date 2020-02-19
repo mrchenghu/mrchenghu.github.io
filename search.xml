@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Unity导出为XCode工程后无法选择iPhone模拟器运行</title>
+    <url>/2020/02/19/Unity%E5%AF%BC%E5%87%BA%E4%B8%BAXCode%E5%B7%A5%E7%A8%8B%E5%90%8E%E6%97%A0%E6%B3%95%E9%80%89%E6%8B%A9%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%BF%90%E8%A1%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在手边正好没有苹果测试机，或者想要调试某个机型、系统的时候，身边又没有的时候后，就轮到模拟器出场了！</p>
+<p>但是当我们正常导出Unity项目为XCode工程时，设备上明明安装了iPhone模拟器，却并发现没有模拟器运行选项。</p>
+<p>后来发现需要将Unity项目导出时设置PlayerSettings Settings for iOS中的Target SDK 为Simulator SDK才可以使用。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Android SDKManager 无法连接到dl.google.com</title>
     <url>/2020/02/16/Android%20SDKManager%20%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E5%88%B0dl.google.com/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在使用Unity导出安卓apk的时候，我们经常需要配置打包环境，如果不安装Android Studio的话，我们一般会选择下载ADT Bundle。</p>
