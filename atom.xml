@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chenghu.online/"/>
-  <updated>2020-02-20T14:42:20.047Z</updated>
+  <updated>2020-02-23T00:56:44.438Z</updated>
   <id>https://chenghu.online/</id>
   
   <author>
@@ -17,19 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>由使用Unity内购插件引起的App Store审核被拒</title>
+    <link href="https://chenghu.online/posts/a4311ff7/"/>
+    <id>https://chenghu.online/posts/a4311ff7/</id>
+    <published>2020-02-22T06:59:32.000Z</published>
+    <updated>2020-02-23T00:56:44.438Z</updated>
+    
+    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>相信不少参加工作后有一定经济能力的朋友，或多或少都会想要拥有一台属于自己的iPhone。不得不承认，苹果设备以时尚整洁的外观以及流畅的操作系统获得了广大用户群体的喜爱。而作为开发者而言，想要发布iOS App，无非只能使用<strong>企业签名</strong>或者上架<strong>AppStore</strong>两种方式，然而企业签名不仅价格昂贵，还会经常会掉签。相比之下上架AppStore仍是首选，</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Unity导出为XCode工程后无法选择iPhone模拟器运行</title>
     <link href="https://chenghu.online/posts/e05b8785/"/>
     <id>https://chenghu.online/posts/e05b8785/</id>
     <published>2020-02-19T13:50:15.000Z</published>
     <updated>2020-02-20T14:42:20.047Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在手边正好没有苹果测试机，或者想要调试某个机型、系统的时候，身边又没有的时候后，就轮到模拟器出场了！</p><p>但是当我们正常导出Unity项目为XCode工程时，设备上明明安装了iPhone模拟器，却并发现没有模拟器运行选项。</p><p>后来发现需要将Unity项目导出时设置PlayerSettings Settings for iOS中的Target SDK 为Simulator SDK才可以使用。</p>]]></content>
+    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>在手边正好没有苹果测试机，或者想要调试某个机型、系统的时候，身边又没有的时候后，就轮到模拟器出场了！</p><p>但是当我们正常导出Unity项目为XCode工程时，设备上明明安装了iPhone模拟器，却并发现没有模拟器运行选项。</p><p>后来发现需要将Unity项目导出时设置PlayerSettings Settings for iOS中的Target SDK 为Simulator SDK才可以使用。</p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        &lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer
       
     
     </summary>
@@ -45,13 +67,13 @@
     <published>2020-02-16T12:09:16.000Z</published>
     <updated>2020-02-20T14:43:10.172Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在使用Unity导出安卓apk的时候，我们经常需要配置打包环境，如果不安装Android Studio的话，我们一般会选择下载ADT Bundle。</p><p>这里我推荐两个国内的安卓开发工具下载网站<a href="http://www.android-studio.org" target="_blank" rel="noopener">http://www.android-studio.org</a> 和<a href="https://www.androiddevtools.cn" target="_blank" rel="noopener">https://www.androiddevtools.cn</a></p><p>ADT Bundle下载完成之后，打包时可能还需要启动手动升级Android SDK，那这个时候问题就来了。启动Android SDKManager后怎么也无法连接到dl.google.com来进行SDK的升级，经过一段时间摸索后发现配置host是最有效的方式。</p><p>1.访问站长之家的站长工具：<a href="http://tool.chinaz.com/" target="_blank" rel="noopener">http://tool.chinaz.com/</a></p><p>2.使用网站中的国内测速工具来测试dl-ssl.google.com</p><p>3.记录ping值最低的ip，比如我这里是172.217.194.93</p><p>4.打开C:\Windows\System32\drivers\etc\hosts 文件</p><p>5.在文件的最下面添加172.217.194.93 dl-ssl.google.com</p>]]></content>
+    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>在使用Unity导出安卓apk的时候，我们经常需要配置打包环境，如果不安装Android Studio的话，我们一般会选择下载ADT Bundle。</p><p>这里我推荐两个国内的安卓开发工具下载网站<a href="http://www.android-studio.org" target="_blank" rel="noopener">http://www.android-studio.org</a> 和<a href="https://www.androiddevtools.cn" target="_blank" rel="noopener">https://www.androiddevtools.cn</a></p><p>ADT Bundle下载完成之后，打包时可能还需要启动手动升级Android SDK，那这个时候问题就来了。启动Android SDKManager后怎么也无法连接到dl.google.com来进行SDK的升级，经过一段时间摸索后发现配置host是最有效的方式。</p><p>1.访问站长之家的站长工具：<a href="http://tool.chinaz.com/" target="_blank" rel="noopener">http://tool.chinaz.com/</a></p><p>2.使用网站中的国内测速工具来测试dl-ssl.google.com</p><p>3.记录ping值最低的ip，比如我这里是172.217.194.93</p><p>4.打开C:\Windows\System32\drivers\etc\hosts 文件</p><p>5.在文件的最下面添加172.217.194.93 dl-ssl.google.com</p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        &lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer
       
     
     </summary>
@@ -67,13 +89,13 @@
     <published>2020-02-15T10:57:06.000Z</published>
     <updated>2020-02-20T14:14:51.610Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>谈起Unity破解相关的问题，如果你是一名Unity开发者，那么肯定就不会陌生。<br>因为Unity虽然提供了个人版，但是个人版打包后会带有的水印，无法在产品上线时使用。<br>所以无论是为了节约成本还是为了方便使用，中小企业或独立开发者往往还是会选择破解。<br>如果你以前破解过或者安装了多个版本的Unity，在再次破解时就有可能会提示“pattern not found”破解失败。</p><h2 id="方案一-重新安装"><a href="#方案一-重新安装" class="headerlink" title="方案一 重新安装"></a>方案一 重新安装</h2><p>删除C:\ProgramData\Unity目录，重新安装Unity。安装完成后不要运行直接破解。</p><h2 id="方案二-重新加载许可证"><a href="#方案二-重新加载许可证" class="headerlink" title="方案二 重新加载许可证"></a>方案二 重新加载许可证</h2><p>检查破解后是否在C:\ProgramData\Unity目录(ProgramData为隐藏文件夹)下生成Unity_lic.ulf，<br>尝试启动Unity，使用账号登录，随便打开一个工程，点击菜单栏Help/Manage License 选择Manual Activation/Load License。</p><h2 id="方案三-下载国外版Unity"><a href="#方案三-下载国外版Unity" class="headerlink" title="方案三 下载国外版Unity"></a>方案三 下载国外版Unity</h2><p>登录Unity国外官网，可能需要翻墙，下载安装你需要的Unity版本，安装完成后尝试破解。</p><h2 id="方案四-直接拷贝相关文件"><a href="#方案四-直接拷贝相关文件" class="headerlink" title="方案四 直接拷贝相关文件"></a>方案四 直接拷贝相关文件</h2><p>如果你像我一样，试过上面所办法，可能他们曾经管用过，但是后面不管用了，可以尝试直接拷贝破解相关的文件完成破解。<br>首先需要有一台电脑可以成功破解Unity，有同事可以找同事借，没有同事可以用其他电脑，没有其他电脑可以安装虚拟机 等。<br>拷贝这台电脑上的C:\ProgramData\Unity文件夹和Unity安装目录的Unity.exe文件到你的电脑上替换到相关目录的文件即可。</p><h1 id><a href="#" class="headerlink" title></a></h1>]]></content>
+    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>谈起Unity破解相关的问题，如果你是一名Unity开发者，那么肯定就不会陌生。<br>因为Unity虽然提供了个人版，但是个人版打包后会带有的水印，无法在产品上线时使用。<br>所以无论是为了节约成本还是为了方便使用，中小企业或独立开发者往往还是会选择破解。<br>如果你以前破解过或者安装了多个版本的Unity，在再次破解时就有可能会提示“pattern not found”破解失败。</p><h2 id="方案一-重新安装"><a href="#方案一-重新安装" class="headerlink" title="方案一 重新安装"></a>方案一 重新安装</h2><p>删除C:\ProgramData\Unity目录，重新安装Unity。安装完成后不要运行直接破解。</p><h2 id="方案二-重新加载许可证"><a href="#方案二-重新加载许可证" class="headerlink" title="方案二 重新加载许可证"></a>方案二 重新加载许可证</h2><p>检查破解后是否在C:\ProgramData\Unity目录(ProgramData为隐藏文件夹)下生成Unity_lic.ulf，<br>尝试启动Unity，使用账号登录，随便打开一个工程，点击菜单栏Help/Manage License 选择Manual Activation/Load License。</p><h2 id="方案三-下载国外版Unity"><a href="#方案三-下载国外版Unity" class="headerlink" title="方案三 下载国外版Unity"></a>方案三 下载国外版Unity</h2><p>登录Unity国外官网，可能需要翻墙，下载安装你需要的Unity版本，安装完成后尝试破解。</p><h2 id="方案四-直接拷贝相关文件"><a href="#方案四-直接拷贝相关文件" class="headerlink" title="方案四 直接拷贝相关文件"></a>方案四 直接拷贝相关文件</h2><p>如果你像我一样，试过上面所办法，可能他们曾经管用过，但是后面不管用了，可以尝试直接拷贝破解相关的文件完成破解。<br>首先需要有一台电脑可以成功破解Unity，有同事可以找同事借，没有同事可以用其他电脑，没有其他电脑可以安装虚拟机 等。<br>拷贝这台电脑上的C:\ProgramData\Unity文件夹和Unity安装目录的Unity.exe文件到你的电脑上替换到相关目录的文件即可。</p><h1 id><a href="#" class="headerlink" title></a></h1></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        &lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer
       
     
     </summary>
@@ -89,13 +111,13 @@
     <published>2020-02-14T05:33:59.000Z</published>
     <updated>2020-02-20T14:14:51.610Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近电脑系统升级，升级后每次开机都会弹出“你的Windows10许可证即将过期”。<br>如果你跟我一样不是购买微软官网激活码激活的话，肯定也会经常遇到这个问题。<br>这个时候我们需要重新激活我们的W10系统，这里我推荐一个激活工具KMSpico。</p>]]></content>
+    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>最近电脑系统升级，升级后每次开机都会弹出“你的Windows10许可证即将过期”。<br>如果你跟我一样不是购买微软官网激活码激活的话，肯定也会经常遇到这个问题。<br>这个时候我们需要重新激活我们的W10系统，这里我推荐一个激活工具KMSpico。</p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        &lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer
       
     
     </summary>
@@ -111,13 +133,13 @@
     <published>2020-02-13T03:20:13.000Z</published>
     <updated>2020-02-20T14:14:51.609Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>转眼又是新的一年，回过头来发现已经是成为别人口中的“程序猿”的第三个年头。<br>过去的时间里，总有一部分工作总是做了就忘，忘了又做。<br>新的一年，希望通过写博客的方式，总结开发过程中遇到的一些问题。<br>可以在积累技术经验的同时，帮助自己和同行少爬一些“坑”，毕竟在实际开发中往往是时间紧，任务重。</p>]]></content>
+    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>转眼又是新的一年，回过头来发现已经是成为别人口中的“程序猿”的第三个年头。<br>过去的时间里，总有一部分工作总是做了就忘，忘了又做。<br>新的一年，希望通过写博客的方式，总结开发过程中遇到的一些问题。<br>可以在积累技术经验的同时，帮助自己和同行少爬一些“坑”，毕竟在实际开发中往往是时间紧，任务重。</p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+        &lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer
       
     
     </summary>
