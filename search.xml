@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AppStore审核被拒之Unity内购插件</title>
+    <title>你的项目中是否还在使用HTTP而非HPPTS</title>
+    <url>/posts/bb35cfaa/</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><p>在开发过程中，http(s)可以帮我们做很多事，比如获取图片、下载文件、请求数据等等可以说是非常方便。但是如果你认真观察过你就会发现，当你访问只支持http的网站时，浏览器会警告我们这个连接不安全，同样当你在高版本的Android或者iOS系统中使用http时,也会收到一些警告或者错误，它们都会建议你使用经过SSL加密后的https而非不加密的http。</p>
+<h2 id="Android：W-System-err-java-io-IOException-Cleartext-HTTP-traffic-to-not-permitted"><a href="#Android：W-System-err-java-io-IOException-Cleartext-HTTP-traffic-to-not-permitted" class="headerlink" title="Android：W/System.err: java.io.IOException: Cleartext HTTP traffic to ** not permitted"></a>Android：W/System.err: java.io.IOException: Cleartext HTTP traffic to ** not permitted</h2><h2 id="iPhone-You-are-using-download-over-http-Currently-Unity-adds-NSAllowsArbitraryLoads-to-Info-plist-to-simplify-transition-but-it-will-be-removed-soon-Please-consider-updating-to-https"><a href="#iPhone-You-are-using-download-over-http-Currently-Unity-adds-NSAllowsArbitraryLoads-to-Info-plist-to-simplify-transition-but-it-will-be-removed-soon-Please-consider-updating-to-https" class="headerlink" title="iPhone: You are using download over http. Currently Unity adds NSAllowsArbitraryLoads to Info.plist to simplify transition, but it will be removed soon. Please consider updating to https."></a>iPhone: You are using download over http. Currently Unity adds NSAllowsArbitraryLoads to Info.plist to simplify transition, but it will be removed soon. Please consider updating to https.</h2></body></html>]]></content>
+  </entry>
+  <entry>
+    <title>AppStore上架：Unity插件实现内购审核不通过</title>
     <url>/posts/3549087f/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><hr>
 <p>相信不少参加工作后有一定经济能力的朋友，或多或少都会想要拥有一台属于自己的iPhone。不得不承认，苹果设备以时尚整洁的外观以及流畅的操作系统获得了广大用户群体的喜爱。而作为开发者而言，想要发布iOS App，无非只能使用企业签名或者上架AppStore两种方式，然而企业签名不仅价格昂贵，还会经常会掉签。相比之下上架AppStore仍是首选。然而想要上架成功，必须要通过AppStore的审核，尽管我们有苹果发布的审核指南作参考，但是呢还是不能避免被拒决，何况被拒时审核人员回复的邮件往往不会明确说明具体哪个功能违规，只会列举出违反了哪一条款，而且不会一次审完所有内容。</p>
