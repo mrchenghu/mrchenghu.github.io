@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android系统版本与API等级对应关系</title>
+    <url>/posts/a4887a20/</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><table>
+<thead>
+<tr>
+<th>Release Name</th>
+<th>API Level</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Q</td>
+<td>29</td>
+<td>Android 10.0</td>
+</tr>
+<tr>
+<td>Pie</td>
+<td>28</td>
+<td>Android 9.0</td>
+</tr>
+<tr>
+<td>Oreo</td>
+<td>27</td>
+<td>Android 8.1</td>
+</tr>
+<tr>
+<td>Oreo</td>
+<td>26</td>
+<td>Android 8.0</td>
+</tr>
+<tr>
+<td>Nougat</td>
+<td>25</td>
+<td>Android 7.1.1</td>
+</tr>
+<tr>
+<td>Nougat</td>
+<td>24</td>
+<td>Android 7.0</td>
+</tr>
+<tr>
+<td>Marshmallow</td>
+<td>23</td>
+<td>Android 6.0</td>
+</tr>
+<tr>
+<td>Lollipop</td>
+<td>22</td>
+<td>Android 5.1</td>
+</tr>
+</tbody></table>
+</body></html>]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OPPO上架：未适配挖孔屏审核不通过</title>
     <url>/posts/9d829433/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>前一段时间安卓上架OPPO渠道审核没有通过。OPPO给出的回复为：<code>OPPO Reno3\OPPO Reno3 Pro机型已经发布上市，为了不影响您的App正常上架，请您尽快做好适配工作</code>，并且在附件中添加了未适配挖孔屏的截图（挖孔侧显示为一条黑边）。</p>
@@ -27,6 +84,9 @@
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">java</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT >= <span class="number">28</span>) {</span><br><span class="line">            WindowManager.LayoutParams lp = getWindow().getAttributes();</span><br><span class="line">            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;</span><br><span class="line">            getWindow().setAttributes(lp);</span><br><span class="line">        }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div>
 <h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>解决方案内容转载至<a href="https://www.jianshu.com/p/87e74de4eaf2" target="_blank" rel="noopener">简书-石先</a>，不用于商业用途，如有侵权请联系，我将尽快删除。</p>
 </body></html>]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title>你的项目中是否还在使用HTTP而非HPPTS</title>
@@ -36,6 +96,10 @@
 <h2 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h2><p>在iPhone上，当你在Xcode上运行你的程序，第一次进行http请求时，会收到这样的警告：<strong>You are using download over http. Currently Unity adds NSAllowsArbitraryLoads to Info.plist to simplify transition, but it will be removed soon. Please consider updating to https</strong>，就是说你仍可以将NSAppTransportSecurity添加到info.plist中来使用http，但这将是将来删除。建议您从现在开始使用https连接。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>也就是说项目当中能使用https尽量使用https，至少在我们可以选择的时候，一定要选择https。</p>
 </body></html>]]></content>
+      <tags>
+        <tag>Android</tag>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>AppStore上架：Unity插件实现内购审核不通过</title>
@@ -45,6 +109,10 @@
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>后来经过仔细排查判断是内购插件的问题，因为苹果审核人员稍微透露了一下说是让认真检查有关支付代码，所以就花了两天时间改为使用苹果原生实现内购，再次提交，果然就通过了审核！</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经过检查，我发现Unity自带的内购插件包里面不仅包含苹果内购还包含Google和FaceBook等支付代码，这下就真相了。本来AppStore就对付有关的内容的审核就非常严格，比如项目中包含支付宝、微信等第三方支付代码，就算没有使用也不会通过审核。当然也有部分App在审核通过后使用H5等方式来跳过苹果内购，但是这类App一旦被举报或者复查，就会被立刻封号。</p>
 </body></html>]]></content>
+      <tags>
+        <tag>Unity</tag>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Unity导出为XCode工程后无法选择iPhone模拟器运行</title>
@@ -60,6 +128,10 @@
 <p>Unity Technologies：我们不将fat库与模拟器库和设备库一起发布的原因是，它增大了最终项目的大小。大多数情况下，用户只需要一个设备项目或模拟器项目，因此在这些情况下，fat库不会带来任何好处，但会将最终项目文件夹的大小增加至少300MB。</p>
 </blockquote>
 </body></html>]]></content>
+      <tags>
+        <tag>Unity</tag>
+        <tag>iOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Android SDKManager无法正常升级SDK</title>
@@ -68,6 +140,9 @@
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>ADT Bundle下载完成之后，打包时可能还需要启动手动升级Android SDK，那这个时候问题就来了。启动Android SDKManager后怎么也无法连接到dl.google.com来进行SDK的升级，经过一段时间摸索后发现配置host是最有效的方式。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>1.访问站长之家的站长工具：<a href="http://tool.chinaz.com/" target="_blank" rel="noopener">http://tool.chinaz.com/</a><br>2.使用网站中的国内测速工具来测试dl-ssl.google.com<br>3.记录ping值最低的ip，比如我这里是172.217.194.93<br>4.打开C:\Windows\System32\drivers\etc\hosts 文件<br>5.在文件的最下面添加172.217.194.93 dl-ssl.google.com</p>
 </body></html>]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title>pattern not found</title>
@@ -79,6 +154,9 @@
 <h2 id="解决方案三-下载国外版Unity"><a href="#解决方案三-下载国外版Unity" class="headerlink" title="解决方案三 下载国外版Unity"></a>解决方案三 下载国外版Unity</h2><p>登录Unity国外官网，可能需要翻墙，下载安装你需要的Unity版本，安装完成后尝试破解。</p>
 <h2 id="解决方案四-直接拷贝相关文件"><a href="#解决方案四-直接拷贝相关文件" class="headerlink" title="解决方案四 直接拷贝相关文件"></a>解决方案四 直接拷贝相关文件</h2><p>如果你像我一样，试过上面所办法，可能他们曾经管用过，但是后面不管用了，可以尝试直接拷贝破解相关的文件完成破解。<br>首先需要有一台电脑可以成功破解Unity，有同事可以找同事借，没有同事可以用其他电脑，没有其他电脑可以安装虚拟机 等。<br>拷贝这台电脑上的C:\ProgramData\Unity文件夹和Unity安装目录的Unity.exe文件到你的电脑上替换到相关目录的文件即可。</p>
 </body></html>]]></content>
+      <tags>
+        <tag>Unity</tag>
+      </tags>
   </entry>
   <entry>
     <title>你的Windows10许可证即将到期</title>
