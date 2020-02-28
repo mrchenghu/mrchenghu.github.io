@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android系统版本与API等级对应关系</title>
+    <title>Unity日志可视化插件LogViewer</title>
+    <url>/posts/1fc8603e/</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在日常开发过程中，我们可以通过UnityEditor的控制台看到打印的Log，进而帮助我们进行开发。然而发布到安卓或者iOS后，我们便看不到了，这样在有报错或者想要了解程序进程的时候非常不方便。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>推荐一款Unity商店中的插件<a href="https://assetstore.unity.com/packages/tools/integration/log-viewer-12047" target="_blank" rel="noopener">LogViewer</a>，插件描述如下</p>
+<blockquote>
+<p>使用这个工具，你可以很容易地检查你的编辑器控制台日志内的游戏本身！即使是在手机上！<br>你所要做的就是用鼠标（点击并拖动）或手指（触摸并拖动）在屏幕上做一个圆圈手势来显示所有这些日志<br>如果有任何问题，请访问github上的日志查看器</p>
+</blockquote>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li>将插件导入到工程当中。</li>
+<li>在场景中选择顶部菜单栏Reporter->Create，创建Reporter对象。</li>
+<li>运行当前场景，用鼠标或者手指拖动做一个圆圈手势，即可呼出窗口。</li>
+</ol>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>这是一款使用OnGUI实现的Log可视化插件，并且在场景切换时不会销毁，建议发布测试包时结合Development模式使用，在发布正式包时移除。</p>
+</body></html>]]></content>
+      <categories>
+        <category>测试调试</category>
+      </categories>
+      <tags>
+        <tag>Unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android系统版本与API等级对照表</title>
     <url>/posts/a4887a20/</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><table>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="对照表"><a href="#对照表" class="headerlink" title="对照表"></a>对照表</h2><table>
 <thead>
 <tr>
 <th>Release Name</th>
@@ -54,7 +76,7 @@
 </tbody></table>
 </body></html>]]></content>
       <categories>
-        <category>环境折腾</category>
+        <category>常见问题</category>
       </categories>
       <tags>
         <tag>Android</tag>
@@ -106,9 +128,9 @@
         <category>常见问题</category>
       </categories>
       <tags>
+        <tag>Android</tag>
         <tag>Unity</tag>
         <tag>iOS</tag>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
