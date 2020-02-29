@@ -83,7 +83,7 @@
       </tags>
   </entry>
   <entry>
-    <title>OPPO上架：未适配挖孔屏审核不通过</title>
+    <title>OPPO上架：未适配挖孔屏审核未通过</title>
     <url>/posts/9d829433/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>前一段时间安卓上架OPPO渠道审核没有通过。OPPO给出的回复为：<code>OPPO Reno3\OPPO Reno3 Pro机型已经发布上市，为了不影响您的App正常上架，请您尽快做好适配工作</code>，并且在附件中添加了未适配挖孔屏的截图（挖孔侧显示为一条黑边）。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p><strong>1.开启显示凹口模式</strong><br>如果你没有凹口屏的真机，也可以在非凹口屏 P 版本手机或者 Android 模拟器中，开启 “模拟具有凹口的显示屏” 的设置项，然后再进行调试。<br><strong>2.适配长屏幕的全面屏</strong></p>
@@ -134,7 +134,7 @@
       </tags>
   </entry>
   <entry>
-    <title>AppStore上架：Unity插件实现内购审核不通过</title>
+    <title>AppStore上架：Unity插件实现内购审核未通过</title>
     <url>/posts/3549087f/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信不少参加工作后有一定经济能力的朋友，或多或少都会想要拥有一台属于自己的iPhone。不得不承认，苹果设备以时尚整洁的外观以及流畅的操作系统获得了广大用户群体的喜爱。而作为开发者而言，想要发布iOS App，无非只能使用企业签名或者上架AppStore两种方式，然而企业签名不仅价格昂贵，还会经常会掉签。相比之下上架AppStore仍是首选。然而想要上架成功，必须要通过AppStore的审核，尽管我们有苹果发布的审核指南作参考，但是呢还是不能避免被拒决，何况被拒时审核人员回复的邮件往往不会明确说明具体哪个功能违规，只会列举出违反了哪一条款，而且不会一次审完所有内容。</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天谈谈AppStore内购，众所周知苹果的内购会抽取30%分成，因为我们的项目道具收费，所以必须接入苹果内购，当时同事使用的是Unity自带的In-App Purchasing实现的内购，后来审核就一直没有通过，被拒理由一直是含有隐藏功能并给警告及延迟审核，这算是比较严重的一种，当时甚至收到了封号警告</p>
