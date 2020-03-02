@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用AndroidStudio查看安卓崩溃闪退日志</title>
+    <url>/posts/caf38928/</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>我们经常会遇到这样的事情，开发工作终于告一段落，然后我们开开心心的发布了最新的安装程序，却收到一些玩家反馈说安装完闪退崩溃。出现这种情况呢，大概率是兼容性问题。本篇介绍Android Studio的adb调试功能，通过adb我们可以快速的定位到问题原因，帮助我们从容解决安卓端的兼容性问题。</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><p><strong>一、启动Android Studio</strong><br><strong>二、连接安卓设备</strong></p>
+<ul>
+<li>真机 </li>
+</ul>
+<ol>
+<li>打开开发者选项</li>
+<li>打开USB调试选项</li>
+<li>使用USB数据线连接PC和真机</li>
+<li>同意真机调试授权</li>
+</ol>
+<ul>
+<li>模拟器，以<a href="http://mumu.163.com/index.html" target="_blank" rel="noopener">网易MuMu模拟器</a>为例<br>打开cmd，输入adb connect 127.0.0.1:7555</li>
+</ul>
+<p><strong>三、查看Log</strong></p>
+<ol>
+<li>切换到Android Studio</li>
+<li>打开Logcat窗口</li>
+<li>运行程序到崩溃闪退位置</li>
+<li>查看log</li>
+</ol>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>主流模拟器的设备连接代码如下：</p>
+<table>
+<thead>
+<tr>
+<th>模拟器</th>
+<th>adb连接代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>网易Mumu</td>
+<td>adb connect 127.0.0.1:7555</td>
+</tr>
+<tr>
+<td>夜神</td>
+<td>adb connect 127.0.0.1:62001</td>
+</tr>
+<tr>
+<td>逍遥</td>
+<td>adb connect 127.0.0.1:21503</td>
+</tr>
+<tr>
+<td>iTools</td>
+<td>adb connect 127.0.0.1:54001</td>
+</tr>
+<tr>
+<td>天天</td>
+<td>adb connect 127.0.0.1:6555</td>
+</tr>
+<tr>
+<td>海马玩</td>
+<td>adb connect 127.0.0.1:26744</td>
+</tr>
+<tr>
+<td>BlueStacks</td>
+<td>adb connect 127.0.0.1:5555</td>
+</tr>
+</tbody></table>
+<p>或许你想了解更多关于(<a href="https://developer.android.google.cn/studio/command-line/adb.html" target="_blank" rel="noopener">Android 调试桥 (adb)</a>)</p>
+</body></html>]]></content>
+      <categories>
+        <category>测试调试</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Unity调用安卓原生更新APK</title>
     <url>/posts/144fe5a4/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>产品上线后免不了要迭代更新，尤其是大版本更新的时候，必须让玩家重新安装。常用方法是使用打包时的版本号结合后端配置进行控制，根据自己定义的规则，当判断需要重新安装更新时，提示玩家进行更新。我们一开始在iPhone上的处理是跳转到AppStore，Android上的处理是跳转到我们的官网，提示玩家进行下载。后来有很多安卓用户反馈不清楚如何下载、经常更新失败。</p>
@@ -19,7 +89,7 @@
 
 <p>在MainActivity下添加代码</p>
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">java</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//安装apk</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">InstallApk</span><span class="params">(String apkPath)</span> </span>{</span><br><span class="line">    File file = <span class="keyword">new</span> File(apkPath);</span><br><span class="line">    Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</span><br><span class="line">    <span class="keyword">if</span>(Build.VERSION.SDK_INT>=<span class="number">24</span>) { <span class="comment">//Android 7.0及以上</span></span><br><span class="line">        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);</span><br><span class="line">        <span class="comment">// 参数2 清单文件中provider节点里面的authorities ; 参数3  共享的文件,即apk包的file类</span></span><br><span class="line">        Uri apkUri = FileProvider.getUriForFile(getApplicationContext(), BuildConfig.APPLICATION_ID+<span class="string">".fileprovider"</span>, file);<span class="comment">//记住修改包名</span></span><br><span class="line">        <span class="comment">//对目标应用临时授权该Uri所代表的文件</span></span><br><span class="line">        intent.setDataAndType(apkUri, <span class="string">"application/vnd.android.package-archive"</span>);</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        intent.setDataAndType(Uri.fromFile(file), <span class="string">"application/vnd.android.package-archive"</span>);</span><br><span class="line">        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">this</span>.startActivity(intent);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div>
-<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>文章内容参考了<a href https: blog.csdn.net qq_37310110 article details 98067993?depth_1-utm_source="distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" "">‘CSDN-幻世界’</a>，不用于商业用途，如有侵权请联系，我将尽快删除。</p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>文章内容参考了<a href="https://blog.csdn.net/qq_37310110/article/details/98067993?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">CSDN-幻世界</a>。不用于商业用途，如有侵权请联系，我将尽快删除。</p>
 </body></html>]]></content>
       <categories>
         <category>更新迭代</category>
