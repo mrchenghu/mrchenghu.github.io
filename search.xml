@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Unity UGUI适配</title>
+    <url>/posts/128d17a7/</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>UI适配是开发过程中不可缺少的环节，适配可以让我们的UI在多分辨率的设备上不变形，保持美观。今天来谈谈我是如何在项目中来适配UGUI的。如果你有更好的方式或者想法，欢迎在下方留言。</p>
+<h2 id="UI控件"><a href="#UI控件" class="headerlink" title="UI控件"></a>UI控件</h2><ul>
+<li>设置UI控件所在的画布的UI比例模式为根据屏幕尺寸进行缩放，参考分辨率为1280x720或1920x1080（通常为16:9），屏幕匹配模式为展开（Expand）。</li>
+<li>根据UI控件的类型和位置设置锚点。</li>
+</ul>
+<h2 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h2><ul>
+<li>设置背景图所在的画布的UI比例模式为根据屏幕尺寸进行缩放，参考分辨率为1280x720或1920x1080（通常为16:9），屏幕匹配模式为收缩(Shrink)。</li>
+<li>背景图的锚点设置为左右居中，上下居中。</li>
+</ul>
+</body></html>]]></content>
+  </entry>
+  <entry>
     <title>使用AndroidStudio查看安卓崩溃闪退日志</title>
     <url>/posts/caf38928/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>我们经常会遇到这样的事情，开发工作终于告一段落，然后我们开开心心的发布了最新的安装程序，却收到一些玩家反馈说安装完闪退崩溃。出现这种情况呢，大概率是兼容性问题。本篇介绍Android Studio的adb调试功能，通过adb我们可以快速的定位到问题原因，帮助我们从容解决安卓端的兼容性问题。</p>
