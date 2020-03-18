@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AppStore上架：未使用iOS原生实现内购 | tiger</title><meta name="description" content="AppStore上架：未使用iOS原生实现内购"><meta name="keywords" content="Unity,iOS,AppStore"><meta name="author" content="tiger"><meta name="copyright" content="tiger"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/my_favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="AppStore上架：未使用iOS原生实现内购"><meta name="twitter:description" content="AppStore上架：未使用iOS原生实现内购"><meta name="twitter:image" content="https://s2.ax1x.com/2020/02/22/3MrXrj.png"><meta property="og:type" content="article"><meta property="og:title" content="AppStore上架：未使用iOS原生实现内购"><meta property="og:url" content="https://chenghu.online/posts/3549087f/"><meta property="og:site_name" content="tiger"><meta property="og:description" content="AppStore上架：未使用iOS原生实现内购"><meta property="og:image" content="https://s2.ax1x.com/2020/02/22/3MrXrj.png"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      now = new Date();
+      hour = now.getHours();
+      isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://chenghu.online/posts/3549087f/"><link rel="prev" title="你的项目中是否还在使用HTTP而非HPPTS" href="https://chenghu.online/posts/bb35cfaa/"><link rel="next" title="Unity导出为XCode工程后无法选择iPhone模拟器运行" href="https://chenghu.online/posts/e05b8785/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://chenghu.online/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: false,
+  isFontAwesomeV5: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="tiger" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 更多</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://s2.ax1x.com/2020/02/22/3MrXrj.png)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">tiger</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 更多</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div><div id="post-info"><div id="post-title"><div class="posttitle">AppStore上架：未使用iOS原生实现内购</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-02-23<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-03-12</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%AE%A1%E6%A0%B8%E6%97%A5%E8%AE%B0/">审核日记</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span><span class="post-meta__separator">|</span><i class="post-meta__icon fa-fw fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/posts/3549087f/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/posts/3549087f/" itemprop="commentCount"></span></a></div></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信不少参加工作后有一定经济能力的朋友，或多或少都会想要拥有一台属于自己的iPhone。不得不承认，苹果设备以时尚整洁的外观以及流畅的操作系统获得了广大用户群体的喜爱。而作为开发者而言，想要发布iOS App，无非只能使用企业签名或者上架AppStore两种方式，然而企业签名不仅价格昂贵，还会经常会掉签。相比之下上架AppStore仍是首选。然而想要上架成功，必须要通过AppStore的审核，尽管我们有苹果发布的审核指南作参考，但是呢还是不能避免被拒决，何况被拒时审核人员回复的邮件往往不会明确说明具体哪个功能违规，只会列举出违反了哪一条款，而且不会一次审完所有内容。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天谈谈AppStore内购，众所周知苹果的内购会抽取30%分成，因为我们的项目道具收费，所以必须接入苹果内购，当时同事使用的是Unity自带的In-App Purchasing实现的内购，后来审核就一直没有通过，被拒理由一直是含有隐藏功能并给警告及延迟审核，这算是比较严重的一种，当时甚至收到了封号警告</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>后来经过仔细排查判断是内购插件的问题，因为苹果审核人员稍微透露了一下说是让认真检查有关支付代码，所以就花了两天时间改为使用苹果原生实现内购，再次提交，果然就通过了审核！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经过检查，我发现Unity自带的内购插件包里面不仅包含苹果内购还包含Google和FaceBook等支付代码。本来AppStore就对付有关的内容的审核就非常严格，比如项目中包含支付宝、微信等第三方支付代码，就算没有使用也不会通过审核。当然也有部分App在审核通过后使用H5等方式来跳过苹果内购，但是这类App一旦被举报或者复查，就会被立刻封号，所以我建议还是使用原生代码实现内购，有点事体量小、干净，如果你感兴趣可以查看<a href="/posts/fb902642/" title="Unity调用iOS原生实现内购">Unity调用iOS原生实现内购</a>这篇文章。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tiger</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chenghu.online/posts/3549087f/">https://chenghu.online/posts/3549087f/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chenghu.online" target="_blank">tiger</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity/">Unity    </a><a class="post-meta__tags" href="/tags/iOS/">iOS    </a><a class="post-meta__tags" href="/tags/AppStore/">AppStore    </a></div><div class="post_share"><div class="social-share" data-image="https://s2.ax1x.com/2020/03/09/89wSaj.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/%E5%BE%AE%E4%BF%A1.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/%E6%94%AF%E4%BB%98%E5%AE%9D.png" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/posts/bb35cfaa/"><img class="prev_cover lazyload" data-src="https://s2.ax1x.com/2020/02/25/3YGU56.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">你的项目中是否还在使用HTTP而非HPPTS</div></div></a></div><div class="next-post pull_right"><a href="/posts/e05b8785/"><img class="next_cover lazyload" data-src="https://s2.ax1x.com/2020/02/19/3VHDLF.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity导出为XCode工程后无法选择iPhone模拟器运行</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/posts/fb902642/" title="Unity调用iOS原生实现内购"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/03/09/89wSaj.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-09</div><div class="relatedPosts_title">Unity调用iOS原生实现内购</div></div></a></div><div class="relatedPosts_item"><a href="/posts/e05b8785/" title="Unity导出为XCode工程后无法选择iPhone模拟器运行"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/19/3VHDLF.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-19</div><div class="relatedPosts_title">Unity导出为XCode工程后无法选择iPhone模拟器运行</div></div></a></div><div class="relatedPosts_item"><a href="/posts/bb35cfaa/" title="你的项目中是否还在使用HTTP而非HPPTS"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/25/3YGU56.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-25</div><div class="relatedPosts_title">你的项目中是否还在使用HTTP而非HPPTS</div></div></a></div><div class="relatedPosts_item"><a href="/posts/3d5e8524/" title="Unity FairyGUI适配"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/03/09/89lMGQ.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-09</div><div class="relatedPosts_title">Unity FairyGUI适配</div></div></a></div><div class="relatedPosts_item"><a href="/posts/128d17a7/" title="Unity UGUI适配"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/03/03/3horhF.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-02</div><div class="relatedPosts_title">Unity UGUI适配</div></div></a></div><div class="relatedPosts_item"><a href="/posts/1fc8603e/" title="Unity日志可视化插件LogViewer"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/28/3D3bGj.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-28</div><div class="relatedPosts_title">Unity日志可视化插件LogViewer</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify: false,
+  verify: false,
+  appId: 'tQ90OYDbWhrYRbMgHxjKHn7Q-9Nh9j0Va',
+  appKey: 'POr9AtbyNKNVnMKEAk0vd5Pz',
+  placeholder: '记得留下你的昵称和邮箱...可以快速收到回复',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: ''
+});</script></div></article></main><footer id="footer" style="background-image: url(https://s2.ax1x.com/2020/02/22/3MrXrj.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By tiger</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

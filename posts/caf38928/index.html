@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用AndroidStudio查看安卓崩溃闪退日志 | tiger</title><meta name="description" content="使用AndroidStudio查看安卓崩溃闪退日志"><meta name="keywords" content="Android"><meta name="author" content="tiger"><meta name="copyright" content="tiger"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/my_favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="使用AndroidStudio查看安卓崩溃闪退日志"><meta name="twitter:description" content="使用AndroidStudio查看安卓崩溃闪退日志"><meta name="twitter:image" content="https://s2.ax1x.com/2020/03/02/3Wpo80.png"><meta property="og:type" content="article"><meta property="og:title" content="使用AndroidStudio查看安卓崩溃闪退日志"><meta property="og:url" content="https://chenghu.online/posts/caf38928/"><meta property="og:site_name" content="tiger"><meta property="og:description" content="使用AndroidStudio查看安卓崩溃闪退日志"><meta property="og:image" content="https://s2.ax1x.com/2020/03/02/3Wpo80.png"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      now = new Date();
+      hour = now.getHours();
+      isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://chenghu.online/posts/caf38928/"><link rel="prev" title="Unity UGUI适配" href="https://chenghu.online/posts/128d17a7/"><link rel="next" title="Unity调用安卓原生更新APK" href="https://chenghu.online/posts/144fe5a4/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://chenghu.online/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: false,
+  isFontAwesomeV5: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="tiger" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 更多</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://s2.ax1x.com/2020/03/02/3Wpo80.png)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">tiger</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 更多</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div><div id="post-info"><div id="post-title"><div class="posttitle">使用AndroidStudio查看安卓崩溃闪退日志</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-03-02<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-03-02</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%B5%8B%E8%AF%95%E8%B0%83%E8%AF%95/">测试调试</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span><span class="post-meta__separator">|</span><i class="post-meta__icon fa-fw fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/posts/caf38928/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/posts/caf38928/" itemprop="commentCount"></span></a></div></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>我们经常会遇到这样的事情，开发工作终于告一段落，然后我们开开心心的发布了最新的安装程序，却收到一些玩家反馈说安装完闪退崩溃。出现这种情况呢，大概率是兼容性问题。本篇介绍Android Studio的adb调试功能，通过adb我们可以快速的定位到问题原因，帮助我们从容解决安卓端的兼容性问题。</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><p><strong>一、启动Android Studio</strong><br><strong>二、连接安卓设备</strong></p>
+<ul>
+<li>真机 </li>
+</ul>
+<ol>
+<li>打开开发者选项</li>
+<li>打开USB调试选项</li>
+<li>使用USB数据线连接PC和真机</li>
+<li>同意真机调试授权</li>
+</ol>
+<ul>
+<li>模拟器，以<a href="http://mumu.163.com/index.html" target="_blank" rel="noopener">网易MuMu模拟器</a>为例<br>打开cmd，输入adb connect 127.0.0.1:7555</li>
+</ul>
+<p><strong>三、查看Log</strong></p>
+<ol>
+<li>切换到Android Studio</li>
+<li>打开Logcat窗口</li>
+<li>运行程序到崩溃闪退位置</li>
+<li>查看log</li>
+</ol>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>主流模拟器的设备连接代码如下：</p>
+<table>
+<thead>
+<tr>
+<th>模拟器</th>
+<th>adb连接代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>网易Mumu</td>
+<td>adb connect 127.0.0.1:7555</td>
+</tr>
+<tr>
+<td>夜神</td>
+<td>adb connect 127.0.0.1:62001</td>
+</tr>
+<tr>
+<td>逍遥</td>
+<td>adb connect 127.0.0.1:21503</td>
+</tr>
+<tr>
+<td>iTools</td>
+<td>adb connect 127.0.0.1:54001</td>
+</tr>
+<tr>
+<td>天天</td>
+<td>adb connect 127.0.0.1:6555</td>
+</tr>
+<tr>
+<td>海马玩</td>
+<td>adb connect 127.0.0.1:26744</td>
+</tr>
+<tr>
+<td>BlueStacks</td>
+<td>adb connect 127.0.0.1:5555</td>
+</tr>
+</tbody></table>
+<p>或许你想了解更多关于(<a href="https://developer.android.google.cn/studio/command-line/adb.html" target="_blank" rel="noopener">Android 调试桥 (adb)</a>)</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tiger</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chenghu.online/posts/caf38928/">https://chenghu.online/posts/caf38928/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chenghu.online" target="_blank">tiger</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android    </a></div><div class="post_share"><div class="social-share" data-image="https://s2.ax1x.com/2020/03/09/89wSaj.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/%E5%BE%AE%E4%BF%A1.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/%E6%94%AF%E4%BB%98%E5%AE%9D.png" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/posts/128d17a7/"><img class="prev_cover lazyload" data-src="https://s2.ax1x.com/2020/03/03/3horhF.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Unity UGUI适配</div></div></a></div><div class="next-post pull_right"><a href="/posts/144fe5a4/"><img class="next_cover lazyload" data-src="https://s2.ax1x.com/2020/02/29/3sceJJ.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity调用安卓原生更新APK</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/posts/decfd98d/" title="Android SDKManager无法正常升级SDK"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/19/3VFMaq.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-16</div><div class="relatedPosts_title">Android SDKManager无法正常升级SDK</div></div></a></div><div class="relatedPosts_item"><a href="/posts/a4887a20/" title="Android系统版本与API等级对照表"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/28/3BXigf.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-28</div><div class="relatedPosts_title">Android系统版本与API等级对照表</div></div></a></div><div class="relatedPosts_item"><a href="/posts/9d829433/" title="OPPO上架：未适配挖孔屏"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/27/3du25V.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-26</div><div class="relatedPosts_title">OPPO上架：未适配挖孔屏</div></div></a></div><div class="relatedPosts_item"><a href="/posts/144fe5a4/" title="Unity调用安卓原生更新APK"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/29/3sceJJ.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-29</div><div class="relatedPosts_title">Unity调用安卓原生更新APK</div></div></a></div><div class="relatedPosts_item"><a href="/posts/bb35cfaa/" title="你的项目中是否还在使用HTTP而非HPPTS"><img class="relatedPosts_cover lazyload"data-src="https://s2.ax1x.com/2020/02/25/3YGU56.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-25</div><div class="relatedPosts_title">你的项目中是否还在使用HTTP而非HPPTS</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify: false,
+  verify: false,
+  appId: 'tQ90OYDbWhrYRbMgHxjKHn7Q-9Nh9j0Va',
+  appKey: 'POr9AtbyNKNVnMKEAk0vd5Pz',
+  placeholder: '记得留下你的昵称和邮箱...可以快速收到回复',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: ''
+});</script></div></article></main><footer id="footer" style="background-image: url(https://s2.ax1x.com/2020/03/02/3Wpo80.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By tiger</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
