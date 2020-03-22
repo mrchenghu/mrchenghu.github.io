@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Unity 图集优化</title>
+    <url>/posts/cf36b965/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>移动端性能十分宝贵，如果在开发过程中不注意优化，等到出了问题就积重难返了。今天总结一下图集优化方面的知识，通过优化图集，我们可以显著的减小包体，减轻程序运行时内存、CPU、GPU所受到的压力</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>图集是什么？ </li>
+<li>顾名思义，图集是图片的集合</li>
+</ul>
+<hr>
+<ul>
+<li>为什么要制作图集？</li>
+<li>通过将UI资源打包成图集，可以显著的降低DarwCall</li>
+</ul>
+<hr>
+<ul>
+<li>什么是DarwCall？为什么要降低？</li>
+<li>在unity中，每次CPU准备数据并通知GPU的过程就称之为一个DrawCall</li>
+<li>如果DrawCall数量过多就会导致CPU进行大量计算，进而导致CPU的过载</li>
+</ul>
+<hr>
+<ul>
+<li>如何在Unity中查看DarwCall?</li>
+<li>可以在Profiler分析器的Rendering栏查看</li>
+</ul>
+<hr>
+<ul>
+<li>DarwCall次数优化标准？</li>
+<li>没有明确标准，建议维持在50左右</li>
+</ul>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p><strong>大小</strong></p>
+<ul>
+<li>设置MaxSize，MaxSize会影响图集的实际大小，默认为2048</li>
+<li>尽量减小图集大小，可以有效的减少空白、减小包体、节省内存</li>
+</ul>
+<p><strong>数量</strong></p>
+<ul>
+<li>纯色和UI弹窗背景图片使用九宫格小图</li>
+<li>减少字体图片，使用Unity字体或者使用字体插件 </li>
+<li>使用龙骨动画、spine动画，代替序列帧动画</li>
+</ul>
+<p><strong>压缩格式</strong></p>
+<ul>
+<li>检查压缩格式，<a href="https://docs.unity3d.com/Manual/class-TextureImporterOverride.html" target="_blank" rel="noopener">默认情况下，Unity编辑器会自动将纹理转换为最合适的格式</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>性能优化</category>
+      </categories>
+      <tags>
+        <tag>Unity</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Unity调用iOS原生实现内购</title>
     <url>/posts/fb902642/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>前面我写了一篇文章：<a href="/posts/3549087f/" title="AppStore上架：未使用iOS原生实现内购">AppStore上架：未使用iOS原生实现内购</a>，说明了为什么最好使用原生代码实现内购，所以本篇便是介绍如何代码实现！我在代码中做了漏单处理，我们需要尽早的监听付款队列，并且要等后端验证完成后才可以结束这笔交易。因为在app启动后，系统会检查是否有未完成的交易，或者新的续订，如果有的话会加入交易队列。所以如果我们在app启动后没有及时添加监听或者监听后没有处理未完成的交易，就会造成漏单。如果我们在后端没有完成验证的情况下结束了正在进行的交易，但是不巧的是后端并没有收到你的请求，同样会造成漏单。</p>
