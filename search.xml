@@ -32,17 +32,20 @@
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p><strong>大小</strong></p>
 <ul>
 <li>设置MaxSize，MaxSize会影响图集的实际大小，默认为2048</li>
-<li>尽量减小图集大小，可以有效的减少空白、减小包体、节省内存</li>
+<li>尽量减小图集大小，可以有效的减少空白、减小包体、节省内存，建议不超过1024</li>
 </ul>
 <p><strong>数量</strong></p>
 <ul>
-<li>纯色和UI弹窗背景图片使用九宫格小图</li>
-<li>减少字体图片，使用Unity字体或者使用字体插件 </li>
-<li>使用龙骨动画、spine动画，代替序列帧动画</li>
+<li>使用九宫格小图代替纯色和UI弹窗背景大图</li>
+<li>使用Unity字体或者使用字体插件代替图片字体</li>
+<li>使用龙骨动画、spine动画代替列帧动画</li>
 </ul>
 <p><strong>压缩格式</strong></p>
 <ul>
-<li>检查压缩格式，<a href="https://docs.unity3d.com/Manual/class-TextureImporterOverride.html" target="_blank" rel="noopener">默认情况下，Unity编辑器会自动将纹理转换为最合适的格式</a></li>
+<li><p>检查压缩格式，<a href="https://docs.unity3d.com/Manual/class-TextureImporterOverride.html" target="_blank" rel="noopener">默认情况下，Unity编辑器会自动将纹理转换为最合适的格式</a></p>
+</li>
+<li><p>Unity提供的默认压缩格式只支持压缩宽/高为4倍数的图集，不支持的图集不会被压缩</p>
+</li>
 </ul>
 ]]></content>
       <categories>
