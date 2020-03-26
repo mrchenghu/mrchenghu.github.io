@@ -277,6 +277,13 @@ img:not([src]) {
   font-weight: 700;
   font-size: 20px;
 }
+.post-ad {
+  margin: 2rem 0 !important;
+}
+.ad_height {
+  height: auto !important;
+  display: block !important;
+}
 #content-inner,
 #footer {
   -webkit-animation: main 1s;
@@ -2574,6 +2581,13 @@ figure.gallery-group .gallery-group-name:after {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+#nav.post-bg #post-info #post-meta {
+  font-size: 95%;
+}
+#nav.post-bg #post-info #post-meta > .meta-secondline,
+#nav.post-bg #post-info #post-meta > .meta-thirdline {
+  display: inline;
+}
 #nav.post-bg #post-info #post-meta .word-count,
 #nav.post-bg #post-info #post-meta #busuanzi_value_page_pv,
 #nav.post-bg #post-info #post-meta .comment-count {
@@ -2584,9 +2598,6 @@ figure.gallery-group .gallery-group-name:after {
 }
 #nav.post-bg #post-info #post-meta .post-meta__icon {
   margin-right: 0.2rem;
-}
-#nav.post-bg #post-info #post-meta .post-meta-pv-cv {
-  display: inline-block;
 }
 #nav.post-bg #post-info #post-meta a {
   color: #eee;
@@ -2805,13 +2816,13 @@ figure.gallery-group .gallery-group-name:after {
   #nav.post-bg > #post-info > #post-meta {
     font-size: 90%;
   }
-  #nav.post-bg > #post-info > #post-meta > span {
+  #nav.post-bg > #post-info > #post-meta .post-meta__categories {
     display: none;
   }
-  #nav.post-bg > #post-info > #post-meta .post-meta-pv-cv {
+  #nav.post-bg > #post-info > #post-meta .meta-thirdline {
     display: block;
   }
-  #nav.post-bg > #post-info > #post-meta .post-meta-pv-cv .post-meta__separator:first-child {
+  #nav.post-bg > #post-info > #post-meta .meta-thirdline .post-meta-pv-cv .post-meta__separator:first-child {
     display: none;
   }
 }
