@@ -78,10 +78,10 @@
 </ol>
 <p>注意：<strong>不要在新手入门时安装任何插件</strong>，很容易下载失败，进去后会有错误，建议登录后在Manage jenkin/Manager Plugins中管理插件</p>
 <h2 id="五、修改Jenkins插件配置"><a href="#五、修改Jenkins插件配置" class="headerlink" title="五、修改Jenkins插件配置"></a>五、修改Jenkins插件配置</h2><ol>
-<li><a href="https://plugins.jenkins.io/unity3d-plugin" target="_blank" rel="noopener">Unity3d plugin。</a> 需要在Jenkins的Global Tool Configuration设置中添加Unity安装目录<br><img src="/" alt="unity安装路径" class="lazyload" data-src="/posts/a27a69b1/unity.png"></li>
-<li><a href="https://plugins.jenkins.io/subversion" target="_blank" rel="noopener">Subversion。</a> 需要在Jenkins凭证设置中添加SVN用户名、密码<br><img src="/" alt="svn凭证" class="lazyload" data-src="/posts/a27a69b1/svn.png"> </li>
+<li><a href="https://plugins.jenkins.io/unity3d-plugin" target="_blank" rel="noopener">Unity3d plugin。</a> 需要在Jenkins的Global Tool Configuration设置中添加Unity安装目录<br><img src="/" alt="GiT0xO.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiT0xO.png"></li>
+<li><a href="https://plugins.jenkins.io/subversion" target="_blank" rel="noopener">Subversion。</a> 需要在Jenkins凭证设置中添加SVN用户名、密码<br><img src="/" alt="GiTDMD.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiTDMD.png"><h2 id="六、Unity编辑器拓展打包"><a href="#六、Unity编辑器拓展打包" class="headerlink" title="六、Unity编辑器拓展打包"></a>六、Unity编辑器拓展打包</h2><h3 id="项目设置代码"><a href="#项目设置代码" class="headerlink" title="项目设置代码"></a>项目设置代码</h3></li>
 </ol>
-<h2 id="六、Unity编辑器拓展打包"><a href="#六、Unity编辑器拓展打包" class="headerlink" title="六、Unity编辑器拓展打包"></a>六、Unity编辑器拓展打包</h2><h3 id="项目设置代码"><a href="#项目设置代码" class="headerlink" title="项目设置代码"></a>项目设置代码</h3><ul>
+<ul>
 <li>通用设置<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">PlayerSettings.companyName=<span class="string">"公司名称"</span></span><br><span class="line">PlayerSettings.productName =<span class="string">"产品名"</span>;</span><br><span class="line"><span class="comment">//允许屏幕上下旋转</span></span><br><span class="line">PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;</span><br><span class="line">PlayerSettings.allowedAutorotateToPortrait = <span class="literal">false</span>;</span><br><span class="line">PlayerSettings.allowedAutorotateToPortraitUpsideDown = <span class="literal">false</span>;</span><br><span class="line">PlayerSettings.allowedAutorotateToLandscapeRight = <span class="literal">true</span>;</span><br><span class="line">PlayerSettings.allowedAutorotateToLandscapeLeft = <span class="literal">true</span>;</span><br><span class="line">PlayerSettings.SetApplicationIdentifier(buildTargetGroup, <span class="string">"包名"</span>);<span class="comment">//根据打包目标平台设置包名</span></span><br><span class="line">PlayerSettings.SplashScreen.show = <span class="literal">false</span>; <span class="comment">//是否显示启动Logo</span></span><br></pre></td></tr></table></figure></li>
 <li>Android平台设置<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置目标SDK版本</span></span><br><span class="line">PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel26;</span><br><span class="line"><span class="comment">//设置不导出安卓工程</span></span><br><span class="line">EditorUserBuildSettings.androidBuildSystem=AndroidBuildSystem.Internal;</span><br><span class="line">DirectoryInfo dir = Directory.GetParent(Application.dataPath);</span><br><span class="line"><span class="comment">//配置安卓签名</span></span><br><span class="line"><span class="keyword">string</span> keystorePath = dir.ToString() + <span class="string">@"/user.keystore"</span>;<span class="comment">//签名文件路径</span></span><br><span class="line">PlayerSettings.Android.keystoreName = keystorePath;</span><br><span class="line">PlayerSettings.Android.keystorePass = <span class="string">"XXX"</span>;<span class="comment">//文件密码</span></span><br><span class="line">PlayerSettings.Android.keyaliasName = <span class="string">"XXX"</span>;<span class="comment">//key的别名</span></span><br><span class="line">PlayerSettings.Android.keyaliasPass = <span class="string">"XXX"</span>;<span class="comment">//key的密码</span></span><br></pre></td></tr></table></figure></li>
 <li>iOS平台设置<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置苹果开发账号TeamID</span></span><br><span class="line">PlayerSettings.iOS.appleDeveloperTeamID = <span class="string">"XXX"</span>;</span><br></pre></td></tr></table></figure>
@@ -108,11 +108,11 @@
 </li>
 </ul>
 <h2 id="七、使用Jenkins构建任务"><a href="#七、使用Jenkins构建任务" class="headerlink" title="七、使用Jenkins构建任务"></a>七、使用Jenkins构建任务</h2><ol>
-<li>新建Item，设置General，可以添加描述，选择是否丢弃旧的构建，添加自定义参数等等<br><img src="/" alt="通用" class="lazyload" data-src="/posts/a27a69b1/%E9%80%9A%E7%94%A8.jpg"></li>
-<li>配置源代码管理，SVN项目地址，连接凭证，我选择的是先还原再更新的方式<br><img src="/" alt="源代码管理" class="lazyload" data-src="/posts/a27a69b1/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86.jpg"></li>
-<li>构建触发器，当设置的条件满足时会自动进行构建<br><img src="/" alt="构建触发器" class="lazyload" data-src="/posts/a27a69b1/%E6%9E%84%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8.jpg"></li>
-<li>构建，可以选择你想用的方式进行构建，可使用bat命令、Shell命令、Unity编辑器命令等方式进行构建，编写命令时我们可以将General里面自定义的参数的和Jenkins提供给我们的参数添加到命令里面进行使用<br><img src="/" alt="使用自定义参数" class="lazyload" data-src="/posts/a27a69b1/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0.jpg"><br><img src="/" alt="打包" class="lazyload" data-src="/posts/a27a69b1/%E6%89%93%E5%8C%85.jpg"></li>
-<li>构建后操作。构建完成后，我们可以归档生成的文件，如果有需要也可以在这里添加邮件通知<br><img src="/" alt="归档" class="lazyload" data-src="/posts/a27a69b1/%E5%BD%92%E6%A1%A3.jpg"></li>
+<li>新建Item，设置General，可以添加描述，选择是否丢弃旧的构建，添加自定义参数等等<br><img src="/" alt="GiTsqH.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiTsqH.png"></li>
+<li>配置源代码管理，SVN项目地址，连接凭证，我选择的是先还原再更新的方式<br><img src="/" alt="GiT6Zd.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiT6Zd.png"></li>
+<li>构建触发器，当设置的条件满足时会自动进行构建<br><img src="/" alt="GiTdG6.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiTdG6.png"></li>
+<li>构建，可以选择你想用的方式进行构建，可使用bat命令、Shell命令、Unity编辑器命令等方式进行构建，编写命令时我们可以将General里面自定义的参数的和Jenkins提供给我们的参数添加到命令里面进行使用<br><img src="/" alt="GiTrse.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiTrse.png"><br><img src="/" alt="GiTwRK.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiTwRK.png"></li>
+<li>构建后操作。构建完成后，我们可以归档生成的文件，如果有需要也可以在这里添加邮件通知<br><img src="/" alt="GiTNI1.png" class="lazyload" data-src="https://s1.ax1x.com/2020/03/27/GiTNI1.png"></li>
 </ol>
 ]]></content>
       <categories>
@@ -391,11 +391,11 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>前一段时间安卓上架OPPO渠道审核没有通过。OPPO给出的回复为：<code>OPPO Reno3\OPPO Reno3 Pro机型已经发布上市，为了不影响您的App正常上架，请您尽快做好适配工作</code>，并且在附件中添加了未适配挖孔屏的截图（挖孔侧显示为一条黑边）。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p><strong>1.开启显示凹口模式</strong><br>如果你没有凹口屏的真机，也可以在非凹口屏 P 版本手机或者 Android 模拟器中，开启 “模拟具有凹口的显示屏” 的设置项，然后再进行调试。<br><strong>2.适配长屏幕的全面屏</strong></p>
 <ul>
-<li>在 Android 8.0（API 26）及更高版本中，我们可以在 <activity> 标签中使用 android：MaxAspectRatio 来声明其支持的屏幕最大宽高比。比如我们可以声明最大宽高比为 2.4：</activity></li>
+<li>在 Android 8.0（API 26）及更高版本中，我们可以在 <activity> 标签中使用 android：MaxAspectRatio 来声明其支持的屏幕最大宽高比。比如我们可以声明最大宽高比为 2.4：</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:maxAspectRatio</span>=<span class="string">"2.4"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>对于Android 7.1及更低版本，我们可以在 <application> 元素中添加名为 android.max_aspect 的 <meta-data> 元素，如下所示：</meta-data></application></li>
+<li>对于Android 7.1及更低版本，我们可以在 <application> 元素中添加名为 android.max_aspect 的 <meta-data> 元素，如下所示：</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"android.max_aspect"</span> <span class="attr">android:value</span>=<span class="string">"2.4"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
