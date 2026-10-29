@@ -34,13 +34,13 @@
       this.cameraReady=false; this.lastSim=null; this.tracks=[]; this.lastPositions=new Map();
       this.atlas=new Image();
       this.atlas.onload=()=>{this.mapCanvas=null; this.mapImageReady=true;};
-      this.atlas.src=root.TANK_ATLAS_URL || 'assets/tank-atlas.png?v=20261029.3';
+      this.atlas.src=root.TANK_ATLAS_URL || 'assets/tank-atlas.png?v=20261029.4';
       this.resize();
     }
     resize() {
       const r=this.canvas.getBoundingClientRect();
-      const width=Math.max(1,Math.round(r.width || root.innerWidth || 1280));
-      const height=Math.max(1,Math.round(r.height || root.innerHeight || 720));
+      const width=Math.max(1,Math.round(this.canvas.clientWidth || root.innerWidth || 1280));
+      const height=Math.max(1,Math.round(this.canvas.clientHeight || root.innerHeight || 720));
       const dpr=Math.min(root.devicePixelRatio || 1,2);
       if(width!==this.width || height!==this.height || dpr!==this.dpr){
         this.width=width; this.height=height; this.dpr=dpr;
@@ -49,14 +49,12 @@
       this.zoom=width<760 ? .78 : 1;
     }
     screenToWorld(clientX,clientY) {
-      const r=this.canvas.getBoundingClientRect();
-      return {x:(clientX-r.left-this.width/2)/this.zoom+this.camera.x,
-        y:(clientY-r.top-this.height/2)/this.zoom+this.camera.y};
+      const p=root.TankViewport.point(clientX,clientY);
+      return {x:(p.x-this.width/2)/this.zoom+this.camera.x,
+        y:(p.y-this.height/2)/this.zoom+this.camera.y};
     }
     worldToScreen(x,y) {
-      const r=this.canvas.getBoundingClientRect();
-      return {x:(x-this.camera.x)*this.zoom+this.width/2+r.left,
-        y:(y-this.camera.y)*this.zoom+this.height/2+r.top};
+      return root.TankViewport.client((x-this.camera.x)*this.zoom+this.width/2,(y-this.camera.y)*this.zoom+this.height/2);
     }
     _sprite(c,name,x,y,width,angle=0,alpha=1) {
       const rect=ATLAS[name];
