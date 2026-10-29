@@ -9,7 +9,7 @@
  function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify(profile));saved=true;}catch(e){saved=false;}}
  function toast(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').classList.add('hidden'),2500);}
  const renderer=new TankRenderer($('battleCanvas'));
- const image=new Image();image.src=window.TANK_ATLAS_URL||'assets/tank-atlas.png?v=20261029.2';
+ const image=new Image();image.src=window.TANK_ATLAS_URL||'assets/tank-atlas.png?v=20261029.3';
  const rects=[[90,15,264,393],[533,15,265,393],[977,15,264,393],[1420,15,265,393],[90,456,264,397],[533,456,265,397]];
  let state='titleScreen',sim=null,aim=null,paused=false,settled=false,matchTimer=null,resultTimer=null,spectatorIndex=0;
  let joy={id:null,x:0,y:0},firePointers=new Set(),skillGesture=null,keys=new Set(),mouse={x:0,y:0,active:false},audioCtx=null,muted=false;
@@ -35,7 +35,7 @@
   ['allyLineup','enemyLineup'].forEach((id,team)=>{$(id).replaceChildren();sim.tanks.filter(t=>t.team===team).forEach((t,i)=>{const el=document.createElement('div');el.className='lineup-card';const c=document.createElement('canvas');c.dataset.skin=t.skin;el.append(c);const name=document.createElement('strong');name.textContent=t.isPlayer?'你 / 先锋':t.name.replace(/队友 · |敌军 · /g,'');el.append(name);const lv=document.createElement('span');lv.textContent=`LV.${t.level} · HP ${t.maxHp}`;el.append(lv);const txt=document.createElement('small');txt.textContent=t.level>=15?'炮火 / 护盾 / 工厂':t.level>=10?'炮火 / 护盾':t.level>=5?'炮火支援':'基础火力';el.append(txt);$(id).append(el);});});
   show('matchScreen');$('matchStatus').textContent='两队已就绪，正在进入战场…';
   document.querySelector('.match-progress i').style.animation='none';void document.querySelector('.match-progress').offsetWidth;document.querySelector('.match-progress i').style.animation='';
-  clearTimeout(matchTimer);matchTimer=setTimeout(()=>{show('battleUI');paused=false;lastTime=performance.now();audioSeen=sim.sequence;updateHUD();pauseIfPortrait();},2300);
+  clearTimeout(matchTimer);matchTimer=setTimeout(()=>{show('battleUI');paused=false;lastTime=performance.now();audioSeen=sim.sequence;updateHUD();},2300);
  }
  function settle(){if(settled||!sim?.result)return;settled=true;clearInput();const oldLevel=profile.level;profile.xp+=XP_REWARD;profile.matches++;while(profile.xp>=needXP()&&profile.level<99){profile.xp-=needXP();profile.level++;}save();const result=sim.result;
   $('resultTitle').textContent=result==='win'?'战斗胜利':result==='loss'?'战斗失利':'战斗平局';$('resultTitle').style.color=result==='win'?'var(--accent)':result==='loss'?'#eca494':'#b3d4ce';

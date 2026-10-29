@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#121c1c"><meta name="game-version" content="20261029.2"><title>坦克大作战 · 离线演练</title><link rel="stylesheet" href="style.css?v=20261029.2"></head>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#121c1c"><meta name="game-version" content="20261029.3"><title>坦克大作战 · 离线演练</title><link rel="stylesheet" href="style.css?v=20261029.3"></head>
 <body>
 <div id="app">
  <canvas id="battleCanvas" aria-label="坦克战场"></canvas>
  <section id="titleScreen" class="screen title-screen">
-  <div class="top-brand"><span class="brand-symbol">✦</span> 装甲行动 <span class="edition">离线演练 / 20261029.2</span></div>
+  <div class="top-brand"><span class="brand-symbol">✦</span> 装甲行动 <span class="edition">离线演练 / 20261029.3</span></div>
   <div class="title-content"><div class="eyebrow"><span class="status-dot"></span> 单人操控 · 六辆坦克 · 一片战场</div><h1>坦克<span>大作战</span></h1><p class="intro">穿过河谷，绕过山岩。<br>与你的队友一起，赢下这场交锋。</p><button id="startButton" class="primary large">开始游戏 <span>↗</span></button><div class="title-meta"><b>3 <i>vs</i> 3</b><span>正俯视战斗</span><span>本地保存进度</span></div></div>
   <div class="hero-tank"><div class="radar r1"></div><div class="radar r2"></div><canvas id="titleTank"></canvas><span class="hero-caption">FIELD UNIT 01 <b>先锋型</b></span></div>
   <div class="title-foot"><span>草地 · 岩山 · 水域</span><span>横屏操作 / 键鼠与触屏均可</span></div>
@@ -33,5 +33,5 @@
  <div id="modalShade" class="modal-shade hidden"><section id="helpModal" class="modal hidden"><button class="close-modal" aria-label="关闭">×</button><div class="eyebrow">FIELD MANUAL</div><h2>操作说明</h2><div class="help-grid"><div><h3>左手移动</h3><p>拖动左侧摇杆，或使用 WASD / 方向键。车身和炮塔一起转向，普攻沿车头发射。</p></div><div><h3>右手释放技能</h3><p>按住技能并拖动选择方向和距离，松手释放。拖进红色取消区可取消。护盾直接点击释放。</p></div><div><h3>键鼠快捷操作</h3><p>空格持续普攻。Q 炮火支援、E 护盾、R 工厂。Q / R 后移动鼠标并点击落点；右键或 Esc 取消。</p></div><div><h3>战场规则</h3><p>山挡移动和普攻，水只挡移动。工厂被攻击一次即摧毁。击毁不复活，队伍全灭后结算。</p></div></div><button class="primary close-help">知道了</button></section><section id="debugModal" class="modal hidden"><button class="close-modal" aria-label="关闭">×</button><div class="eyebrow">原型调试</div><h2>快速准备下一场</h2><p>恢复体力可以无限使用，方便反复试玩。</p><button id="restoreEnergy" class="primary">恢复体力至 30 / 30 <span>ϟ</span></button><div class="debug-level"><label for="testLevel">测试等级</label><select id="testLevel"><option value="1">1级 · 普攻</option><option value="5">5级 · 炮火支援</option><option value="10">10级 · 加装护盾</option><option value="15">15级 · 全部技能</option><option value="20">20级 · 增加生命</option><option value="25">25级 · 再增加生命</option></select><button id="applyTestLevel" class="subtle">应用</button><small>仅用于测试技能，修改当前等级并清空当前级经验。</small></div></section><section id="pauseModal" class="modal pause-modal hidden"><div class="eyebrow">PAUSED</div><h2>战斗暂停</h2><p>战场已暂停，准备好了就继续。</p><button id="resumeButton" class="primary">继续战斗</button><button id="quitButton" class="subtle">退出本局（不结算经验）</button></section></div>
  <div id="toast" role="status" class="toast hidden"></div>
 </div>
-<script src="core.js?v=20261029.2"></script><script src="render.js?v=20261029.2"></script><script src="app.js?v=20261029.2"></script>
+<script src="core.js?v=20261029.3"></script><script src="render.js?v=20261029.3"></script><script src="app.js?v=20261029.3"></script>
 </body></html>

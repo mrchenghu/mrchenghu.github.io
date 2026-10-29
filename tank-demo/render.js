@@ -34,7 +34,7 @@
       this.cameraReady=false; this.lastSim=null; this.tracks=[]; this.lastPositions=new Map();
       this.atlas=new Image();
       this.atlas.onload=()=>{this.mapCanvas=null; this.mapImageReady=true;};
-      this.atlas.src=root.TANK_ATLAS_URL || 'assets/tank-atlas.png?v=20261029.2';
+      this.atlas.src=root.TANK_ATLAS_URL || 'assets/tank-atlas.png?v=20261029.3';
       this.resize();
     }
     resize() {
