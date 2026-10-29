@@ -9,7 +9,7 @@
  function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify(profile));saved=true;}catch(e){saved=false;}}
  function toast(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').classList.add('hidden'),2500);}
  const renderer=new TankRenderer($('battleCanvas'));
- const image=new Image();image.src=window.TANK_ATLAS_URL||'assets/tank-atlas.png?v=20261029.1';
+ const image=new Image();image.src=window.TANK_ATLAS_URL||'assets/tank-atlas.png?v=20261029.2';
  const rects=[[90,15,264,393],[533,15,265,393],[977,15,264,393],[1420,15,265,393],[90,456,264,397],[533,456,265,397]];
  let state='titleScreen',sim=null,aim=null,paused=false,settled=false,matchTimer=null,resultTimer=null,spectatorIndex=0;
  let joy={id:null,x:0,y:0},firePointers=new Set(),skillGesture=null,keys=new Set(),mouse={x:0,y:0,active:false},audioCtx=null,muted=false;
@@ -88,8 +88,7 @@
   requestAnimationFrame(frame);
  }
  image.onload=()=>{tankPicture($('titleTank'),0,-.48,true);tankPicture($('lobbyTank'),0,.36,true);};
- function pauseIfPortrait(){if(window.matchMedia('(orientation:portrait) and (max-width:900px)').matches&&state==='battleUI'&&!paused&&!sim?.result)togglePause();}
- window.addEventListener('resize',()=>{renderer.resize();clearInput();pauseIfPortrait();});
+ window.addEventListener('resize',()=>{renderer.resize();clearInput();});
  // Explicit inspection hooks used for deterministic local QA, never involved in normal play.
  window.tankDemo={get profile(){return {...profile};},get sim(){return sim;},get state(){return state;},get renderer(){return renderer;},get aim(){return aim;},get paused(){return paused;},get settled(){return settled;},beginMatch,restoreEnergy(){profile.energy=30;save();updateLobby();},setTestLevel(n){profile.level=Math.max(1,Math.min(99,n));profile.xp=0;save();updateLobby();},showLobby(){show('lobbyScreen');},finishForTest(result){if(!sim)return;sim.result=result;settle();},cast:(sk,x,y)=>castNow(sk,x,y),cancelAim};
  show('titleScreen');requestAnimationFrame(frame);
